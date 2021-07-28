@@ -1,0 +1,19 @@
+{
+  "name": "alexandreaude_6_27072021",
+  "version": "1.0.0",
+  "description": "Alexandreaude_6_27072021",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kisala1/Alexandreaude_6_27072021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kisala1/Alexandreaude_6_27072021/issues"
+  },
+  "homepage": "https://github.com/Kisala1/Alexandreaude_6_27072021#readme"
+}
