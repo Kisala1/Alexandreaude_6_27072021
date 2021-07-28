@@ -1,0 +1,25 @@
+$font_body: "DM Sans", sans-serif;
+$background-color_primary: #901c1c;
+$color_primary: #d3573c;
+$background-color-search: #fafafa;
+$color_input-search: #525252;
+$background-color_secondary: #d3573c;
+$color_secondary: #901c1c;
+
+h1 {
+  font-family: $font_body;
+  color: $color_secondary;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  figure {
+    flex-basis: 20%;
+    overflow: hidden;
+    img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+  }
+}

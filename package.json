@@ -4,7 +4,7 @@
   "description": "Alexandreaude_6_27072021",
   "main": "js.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch ./sass/style.scss:./sass/style.css"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,20 @@
+h1 {
+  font-family: "DM Sans", sans-serif;
+  color: #901c1c;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+main figure {
+  flex-basis: 20%;
+  overflow: hidden;
+}
+main figure img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
