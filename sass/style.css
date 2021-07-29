@@ -1,20 +1,120 @@
-h1 {
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
   font-family: "DM Sans", sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header img {
+  width: 25%;
+}
+
+header nav {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  cursor: pointer;
   color: #901c1c;
+  font-weight: 500;
+  font-size: small;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+}
+
+header nav ul li:hover {
+  border: 0.5px solid blue;
+  border-radius: 11px;
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
+main h1 {
+  position: absolute;
+  top: 1em;
+  left: 35em;
+  color: #901c1c;
+  font-weight: 400;
+}
+
 main figure {
-  flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+  margin: 1em;
   overflow: hidden;
 }
+
 main figure img {
   width: 100%;
-  object-fit: cover;
+  height: 22em;
+  padding: 4em;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 
+main figure figcaption {
+  text-align: center;
+}
+
+main figure figcaption h2 {
+  color: #d3573c;
+  font-weight: 400;
+  font-size: xx-large;
+}
+
+main figure figcaption span {
+  cursor: pointer;
+  color: #901c1c;
+  font-weight: 500;
+  font-size: small;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+}
+
+main figure figcaption span:hover {
+  border: 0.5px solid blue;
+  border-radius: 11px;
+}
 /*# sourceMappingURL=style.css.map */

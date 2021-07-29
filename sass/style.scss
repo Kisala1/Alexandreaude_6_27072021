@@ -1,3 +1,5 @@
+@import "mixins.scss";
+
 $font_body: "DM Sans", sans-serif;
 $background-color_primary: #901c1c;
 $color_primary: #d3573c;
@@ -6,20 +8,74 @@ $color_input-search: #525252;
 $background-color_secondary: #d3573c;
 $color_secondary: #901c1c;
 
-h1 {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
   font-family: $font_body;
-  color: $color_secondary;
+}
+
+header {
+  display: flex;
+  img {
+    width: 25%;
+  }
+  nav {
+    align-self: center;
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        @include styleLinkTags;
+      }
+      li:hover {
+        @include styleLinkTagsHover;
+      }
+    }
+  }
 }
 main {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  h1 {
+    position: absolute;
+    top: 1em;
+    left: 35em;
+    color: $color_secondary;
+    font-weight: 400;
+  }
   figure {
-    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 28%;
+    margin: 1em;
     overflow: hidden;
     img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
+      width: 100%;
+      height: 22em;
+      padding: 4em;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    figcaption {
+      text-align: center;
+      h2 {
+        color: $color_primary;
+        font-weight: 400;
+        font-size: xx-large;
+      }
+      span {
+        @include styleLinkTags;
+        &:hover {
+          @include styleLinkTagsHover;
+        }
+      }
     }
   }
 }

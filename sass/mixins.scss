@@ -1,0 +1,14 @@
+@mixin styleLinkTags {
+  cursor: pointer;
+  color: $color_secondary;
+  font-weight: 500;
+  font-size: small;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+}
+@mixin styleLinkTagsHover {
+  border: 0.5px solid blue;
+  border-radius: 11px;
+}
