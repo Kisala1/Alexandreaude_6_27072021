@@ -16,14 +16,16 @@ $color_secondary: #901c1c;
   margin: 0;
 }
 
-body{
+body {
   font-family: $font_body;
 }
 
 header {
   display: flex;
+  width: 70%;
+  justify-content: space-around;
   img {
-    width: 25%;
+    width: 30%;
   }
   nav {
     align-self: center;
@@ -43,10 +45,11 @@ main {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 5em;
   h1 {
     position: absolute;
     top: 1em;
-    left: 35em;
+    left: 75%;
     color: $color_secondary;
     font-weight: 400;
   }
@@ -59,21 +62,23 @@ main {
     img {
       width: 100%;
       height: 22em;
-      padding: 4em;
       object-fit: cover;
-      border-radius: 50%;
+      clip-path: circle(25%);
+    }
+    h2 {
+      color: $color_primary;
+      font-weight: 400;
+      font-size: xx-large;
+      text-align: center;
     }
     figcaption {
       text-align: center;
-      h2 {
-        color: $color_primary;
-        font-weight: 400;
-        font-size: xx-large;
-      }
-      span {
-        @include styleLinkTags;
-        &:hover {
-          @include styleLinkTagsHover;
+      p {
+        span {
+          @include styleLinkTags;
+          &:hover {
+            @include styleLinkTagsHover;
+          }
         }
       }
     }
