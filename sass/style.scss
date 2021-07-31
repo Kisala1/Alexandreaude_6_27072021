@@ -1,12 +1,5 @@
+@import "theme.scss";
 @import "mixins.scss";
-
-$font_body: "DM Sans", sans-serif;
-$background-color_primary: #901c1c;
-$color_primary: #d3573c;
-$background-color-search: #fafafa;
-$color_input-search: #525252;
-$background-color_secondary: #d3573c;
-$color_secondary: #901c1c;
 
 *,
 *:before,
@@ -17,10 +10,10 @@ $color_secondary: #901c1c;
 }
 
 body {
-  font-family: $font_body;
+  font-family: $font-primary;
 }
 
-header {
+.banner {
   display: flex;
   width: 70%;
   justify-content: space-around;
@@ -41,45 +34,51 @@ header {
     }
   }
 }
-main {
+h1 {
+  position: absolute;
+  top: 1em;
+  left: 75%;
+  color: $secondary-color;
+  font-weight: 400;
+}
+.profil_photographer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+figure {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 5em;
-  h1 {
-    position: absolute;
-    top: 1em;
-    left: 75%;
-    color: $color_secondary;
-    font-weight: 400;
+  flex-direction: column;
+  margin: 1em;
+  img {
+    width: 100%;
+    height: 22em;
+    object-fit: cover;
+    clip-path: circle(25%);
   }
-  figure {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 28%;
-    margin: 1em;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 22em;
-      object-fit: cover;
-      clip-path: circle(25%);
-    }
-    h2 {
-      color: $color_primary;
-      font-weight: 400;
-      font-size: xx-large;
-      text-align: center;
-    }
-    figcaption {
-      text-align: center;
-      p {
-        span {
-          @include styleLinkTags;
-          &:hover {
-            @include styleLinkTagsHover;
-          }
-        }
+  h2 {
+    color: $primary-color;
+    font-weight: 400;
+    font-size: xx-large;
+    text-align: center;
+  }
+}
+figcaption {
+  text-align: center;
+  .lieu {
+    color: $secondary-color;
+    font-weight: 500;
+  }
+  .prix {
+    color: $input-color;
+    font-weight: 400;
+    font-size: small;
+  }
+  .tags {
+    span {
+      @include styleLinkTags;
+      &:hover {
+        @include styleLinkTagsHover;
       }
     }
   }

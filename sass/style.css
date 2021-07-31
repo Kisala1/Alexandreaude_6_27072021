@@ -11,7 +11,7 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-header {
+.banner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,24 +20,24 @@ header {
       justify-content: space-around;
 }
 
-header img {
+.banner img {
   width: 30%;
 }
 
-header nav {
+.banner nav {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-header nav ul {
+.banner nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
 
-header nav ul li {
+.banner nav ul li {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -48,24 +48,12 @@ header nav ul li {
   border-radius: 11px;
 }
 
-header nav ul li:hover {
+.banner nav ul li:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
 
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 5em;
-}
-
-main h1 {
+h1 {
   position: absolute;
   top: 1em;
   left: 75%;
@@ -73,7 +61,16 @@ main h1 {
   font-weight: 400;
 }
 
-main figure {
+.profil_photographer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,13 +78,10 @@ main figure {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-preferred-size: 28%;
-      flex-basis: 28%;
   margin: 1em;
-  overflow: hidden;
 }
 
-main figure img {
+figure img {
   width: 100%;
   height: 22em;
   -o-object-fit: cover;
@@ -96,18 +90,29 @@ main figure img {
           clip-path: circle(25%);
 }
 
-main figure h2 {
+figure h2 {
   color: #d3573c;
   font-weight: 400;
   font-size: xx-large;
   text-align: center;
 }
 
-main figure figcaption {
+figcaption {
   text-align: center;
 }
 
-main figure figcaption p span {
+figcaption .lieu {
+  color: #901c1c;
+  font-weight: 500;
+}
+
+figcaption .prix {
+  color: #525252;
+  font-weight: 400;
+  font-size: small;
+}
+
+figcaption .tags span {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -118,7 +123,7 @@ main figure figcaption p span {
   border-radius: 11px;
 }
 
-main figure figcaption p span:hover {
+figcaption .tags span:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
