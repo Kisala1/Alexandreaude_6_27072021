@@ -11,7 +11,7 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-.banner {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,24 +20,24 @@ body {
       justify-content: space-around;
 }
 
-.banner img {
-  width: 30%;
+.header a {
+  cursor: pointer;
 }
 
-.banner nav {
+.header nav {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.banner nav ul {
+.header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
 
-.banner nav ul li {
+.header nav ul li {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -48,7 +48,7 @@ body {
   border-radius: 11px;
 }
 
-.banner nav ul li:hover {
+.header nav ul li:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
@@ -79,6 +79,11 @@ figure {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 1em;
+}
+
+figure a {
+  cursor: pointer;
+  text-decoration: inherit;
 }
 
 figure img {
