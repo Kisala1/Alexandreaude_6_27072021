@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;EAEE;AACF,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,MAAM,CAAC;EACN,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACV;;AAED;;GAEG;AAEH,AAAA,EAAE,CAAC;EACD,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,QAAQ;EACnB,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "style_photographer.scss"
+    ],
+    "names": [],
+    "file": "style_photographer.css"
+}

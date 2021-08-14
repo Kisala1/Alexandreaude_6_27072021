@@ -1,0 +1,29 @@
+@use  "/main/style_main/theme.scss";
+@use  "/main/style_main/mixins.scss";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-primary;
+}
+
+h1 {
+  color: $secondary-color;
+  font-weight: 400;
+  font-size: xx-large;
+  text-align: center;
+}
+.tags {
+  span {
+    @include styleLinkTags;
+    &:hover {
+      @include styleLinkTagsHover;
+    }
+  }
+}
