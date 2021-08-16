@@ -11,7 +11,7 @@
     rel="stylesheet"
   />
   <body>
-    <header class="header" role="banner">
+    <header class="header_index" role="banner">
       <a href="index.html">
         <img
           src="../image/Logo_Ficheye.png"
@@ -34,131 +34,34 @@
     </header>
     <main class="container" role="main">
       <h1 role="header (h1)">Nos photographes</h1>
-      <div class="profil_photographer" aria-label="profils photographer">
+      <div
+        id="profil_photographer"
+        class="profil_photographer"
+        aria-label="profils photographer"
+      ></div>
+      <template id="profil_photographer_element">
         <figure>
-          <a
-            href="photographer.html"
-            role="link (h2) + image"
-            aria-label="Mimi Keel"
-          >
+          <a href="photographer.html">
             <img
+              class="portrait"
               src="../../data/Mimi/Portrait_Nora.jpg"
               alt="Portrait Nora"
             />
-            <h2>Mimi Keel</h2>
+            <h2 class="name"></h2>
           </a>
           <figcaption class="description">
-            <span class="lieu">London,UK</span>
-            <p class="description">Voir le beau dans le quotidien</p>
-            <strong class="prix"> 400€/jour</strong>
+            <span class="lieu"></span>
+            <p class="tagline"></p>
+            <strong class="price"></strong>
             <div class="tags" role="links" aria-label="tags">
-              <span class="tags_portrait">#portrait</span
-              ><span class="tags_events">#events</span
-              ><span class="tags_travel">#travel</span
-              ><span class="tags_animals">#animals</span>
+              <span>#portrait</span><span>#events</span><span>#travel</span
+              ><span>#animals</span>
             </div>
           </figcaption>
         </figure>
-
-        <figure>
-          <a href="" role="link (h2) + image" aria-label="Ellie-Rose Wilkens">
-            <img
-              src="../../data/Ellie_Rose/Architecture_Horseshoe.jpg"
-              alt="Architecture Horseshoe"
-            />
-            <h2>Ellie-Rose Wilkens</h2>
-          </a>
-          <figcaption class="description">
-            <span class="lieu"> Paris, France</span>
-            <p class="description">Travaille sur des compositions complexes</p>
-            <strong class="prix">250€/jour</strong>
-            <div class="tags" role="links" aria-label="tags">
-              <span class="tags_sport">#sport</span>
-              <span class="tags_architecture">#architecture</span>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure>
-          <a href="" role="link (h2) + image" aria-label="Tracy Galindo">
-            <img
-              src="../../data/Tracy/Fashion_Urban_Jungle.jpg"
-              alt="Fashion Urban Jungle"
-            />
-            <h2>Tracy Galindo</h2>
-          </a>
-          <figcaption class="description">
-            <span class="lieu"> Montréal, Canada </span>
-            <p class="description">Photographe freelance</p>
-            <strong class="prix">500€/jour</strong>
-            <div class="tags" role="links" aria-label="tags">
-              <span class="tags_art">#art</span
-              ><span class="tags_fashion">#fashion</span
-              ><span class="tags_events">#events</span>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure>
-          <a href="" role="link (h2) + image" aria-label="Nabeel Bradford">
-            <img
-              src="../../data/Nabeel/Travel_Outdoor_Baths.jpg"
-              alt="Travel Outdoor Baths"
-            />
-            <h2>Nabeel Bradford</h2>
-          </a>
-          <figcaption class="description">
-            <span class="lieu">Mexico City, Mexico </span>
-            <p class="description">Je vais toujours de l'avant</p>
-            <strong class="prix">350€/jour</strong>
-            <div class="tags" role="links" aria-label="tags">
-              <span class="tags_travel">#travel</span
-              ><span class="tags_portrait">#portrait</span>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure>
-          <a href="" role="link (h2) + image" aria-label="Rhode Dubois">
-            <img
-              src="../../data/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
-              alt="Fashion Melody Red on Stripes"
-            />
-            <h2>Rhode Dubois</h2>
-          </a>
-          <figcaption class="description">
-            <span class="lieu">Barcelona, Spain</span>
-            <p class="description">Créatrice de souvenirs</p>
-            <strong class="prix">375€/jour</strong>
-            <div class="tags" role="links" aria-label="tags">
-              <span class="tags_sport">#sport</span
-              ><span class="tags_fashion">#fashion</span
-              ><span class="tags_events">#events</span
-              ><span class="tags_animals">#animals</span>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure>
-          <a href="" role="link (h2) + image" aria-label="Marcel Nikolic">
-            <img
-              src="../../data/Marcel/Travel_Tower.jpg"
-              alt="Travel Tower"
-            />
-            <h2>Marcel Nikolic</h2>
-          </a>
-          <figcaption class="description">
-            <span class="lieu">Berlin, Germany</span>
-            <p class="description">Toujours a la recherche de LA photo</p>
-            <strong class="prix">300€/jour</strong>
-            <div class="tags" role="links" aria-label="tags">
-              <span class="tags_travel">#travel</span
-              ><span class="tags_architecture">#architecture</span>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
+      </template>
     </main>
-    <script src="../scripts/js.js"></script>
+
+    <script src="../scripts/index.js"></script>
   </body>
 </html>

@@ -10,22 +10,22 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-.header {
+.header_index {
   display: flex;
   width: 70%;
   justify-content: space-around;
 }
-.header a {
+.header_index a {
   cursor: pointer;
 }
-.header nav {
+.header_index nav {
   align-self: center;
 }
-.header nav ul {
+.header_index nav ul {
   display: flex;
   list-style: none;
 }
-.header nav ul li {
+.header_index nav ul li {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -35,7 +35,7 @@ body {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
 }
-.header nav ul li:hover {
+.header_index nav ul li:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
@@ -76,19 +76,19 @@ figure h2 {
   text-align: center;
 }
 
-figcaption {
+.description {
   text-align: center;
 }
-figcaption .lieu {
+.description .lieu {
   color: #901c1c;
   font-weight: 500;
 }
-figcaption .prix {
+.description .price {
   color: #525252;
   font-weight: 400;
   font-size: small;
 }
-figcaption .tags span {
+.description .tags span {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -98,21 +98,13 @@ figcaption .tags span {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
 }
-figcaption .tags span:hover {
+.description .tags span:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: "DM Sans", sans-serif;
+.header_photographer img {
+  width: 30%;
 }
 
 h1 {
@@ -120,21 +112,6 @@ h1 {
   font-weight: 400;
   font-size: xx-large;
   text-align: center;
-}
-
-.tags span {
-  cursor: pointer;
-  color: #901c1c;
-  font-weight: 500;
-  font-size: small;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  border: 0.5px solid #c4c4c4;
-  border-radius: 11px;
-}
-.tags span:hover {
-  border: 0.5px solid blue;
-  border-radius: 11px;
 }
 
 /*# sourceMappingURL=app.css.map */
