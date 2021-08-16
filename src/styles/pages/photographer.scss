@@ -1,5 +1,5 @@
-@use  "/main/style_main/theme.scss";
-@use  "/main/style_main/mixins.scss";
+@use "../theme";
+@use "../mixins";
 
 *,
 *:before,
@@ -10,20 +10,20 @@
 }
 
 body {
-  font-family: $font-primary;
+  font-family: theme.$font-primary;
 }
 
 h1 {
-  color: $secondary-color;
+  color: theme.$secondary-color;
   font-weight: 400;
   font-size: xx-large;
   text-align: center;
 }
 .tags {
   span {
-    @include styleLinkTags;
+    @include mixins.styleLinkTags;
     &:hover {
-      @include styleLinkTagsHover;
+      @include mixins.styleLinkTagsHover;
     }
   }
 }

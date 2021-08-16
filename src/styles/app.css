@@ -1,8 +1,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -12,31 +11,20 @@ body {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 70%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 .header a {
   cursor: pointer;
 }
-
 .header nav {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 .header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
-
 .header nav ul li {
   cursor: pointer;
   color: #901c1c;
@@ -47,7 +35,6 @@ body {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
 }
-
 .header nav ul li:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
@@ -62,39 +49,26 @@ h1 {
 }
 
 .profil_photographer {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 figure {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 1em;
 }
-
 figure a {
   cursor: pointer;
   text-decoration: inherit;
 }
-
 figure img {
   width: 100%;
   height: 22em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-clip-path: circle(25%);
-          clip-path: circle(25%);
+  object-fit: cover;
+  clip-path: circle(25%);
 }
-
 figure h2 {
   color: #d3573c;
   font-weight: 400;
@@ -105,18 +79,15 @@ figure h2 {
 figcaption {
   text-align: center;
 }
-
 figcaption .lieu {
   color: #901c1c;
   font-weight: 500;
 }
-
 figcaption .prix {
   color: #525252;
   font-weight: 400;
   font-size: small;
 }
-
 figcaption .tags span {
   cursor: pointer;
   color: #901c1c;
@@ -127,9 +98,43 @@ figcaption .tags span {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
 }
-
 figcaption .tags span:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }
-/*# sourceMappingURL=style.css.map */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+h1 {
+  color: #901c1c;
+  font-weight: 400;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.tags span {
+  cursor: pointer;
+  color: #901c1c;
+  font-weight: 500;
+  font-size: small;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+}
+.tags span:hover {
+  border: 0.5px solid blue;
+  border-radius: 11px;
+}
+
+/*# sourceMappingURL=app.css.map */

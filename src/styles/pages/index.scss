@@ -1,5 +1,5 @@
-@use "theme.scss";
-@use "mixins.scss";
+@use "../theme";
+@use "../mixins";
 
 *,
 *:before,
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: $font-primary;
+  font-family: theme.$font-primary;
 }
 
 .header {
@@ -26,10 +26,10 @@ body {
       display: flex;
       list-style: none;
       li {
-        @include styleLinkTags;
+        @include mixins.styleLinkTags;
       }
       li:hover {
-        @include styleLinkTagsHover;
+        @include mixins.styleLinkTagsHover;
       }
     }
   }
@@ -38,7 +38,7 @@ h1 {
   position: absolute;
   top: 1em;
   left: 75%;
-  color: $secondary-color;
+  color: theme.$secondary-color;
   font-weight: 400;
 }
 .profil_photographer {
@@ -61,7 +61,7 @@ figure {
     clip-path: circle(25%);
   }
   h2 {
-    color: $primary-color;
+    color: theme.$primary-color;
     font-weight: 400;
     font-size: xx-large;
     text-align: center;
@@ -70,19 +70,19 @@ figure {
 figcaption {
   text-align: center;
   .lieu {
-    color: $secondary-color;
+    color: theme.$secondary-color;
     font-weight: 500;
   }
   .prix {
-    color: $input-color;
+    color: theme.$input-color;
     font-weight: 400;
     font-size: small;
   }
   .tags {
     span {
-      @include styleLinkTags;
+      @include mixins.styleLinkTags;
       &:hover {
-        @include styleLinkTagsHover;
+        @include mixins.styleLinkTagsHover;
       }
     }
   }
