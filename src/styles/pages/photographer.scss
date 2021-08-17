@@ -1,29 +1,16 @@
 @use "../theme";
 @use "../mixins";
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
 
-body {
-  font-family: theme.$font-primary;
+.header_photographer {
+  img {
+    width: 30%;
+  }
 }
-
 h1 {
   color: theme.$secondary-color;
   font-weight: 400;
   font-size: xx-large;
   text-align: center;
 }
-.tags {
-  span {
-    @include mixins.styleLinkTags;
-    &:hover {
-      @include mixins.styleLinkTagsHover;
-    }
-  }
-}
+

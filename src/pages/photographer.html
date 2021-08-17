@@ -11,7 +11,7 @@
     rel="stylesheet"
   />
   <body>
-    <header class="header" role="banner">
+    <header class="header_photographer" role="banner">
       <a href="../pages/index.html">
         <img
           src="../image/Logo_Ficheye.png"
@@ -22,26 +22,24 @@
     </header>
 
     <main>
-      <h1 role="Header (h1)">Mimi Keel</h1>
-      <p role="Text"><span>London,UK</span> Voir le beau dans le quotidien</p>
-      <div class="tags" role="links" aria-label="tags">
-        <span class="tags_portrait">#portrait</span
-        ><span class="tags_events">#events</span
-        ><span class="tags_travel">#travel</span
-        ><span class="tags_animals">#animals</span>
-      </div>
-      <button role="Button" aria-label="Contact Me">Contactez-moi</button>
-      <img
-      src="../../data/Mimi/Portrait_Nora.jpg"
-      alt=""
-      role="Image"
-    />
-<div>
-    <span class="like">297 081</span>
-    <span class="price">300€ / jour</span>
-</div>
-
+      <div
+        id="profil_photographer"
+        class="profil_photographer"
+        aria-label="profils photographer"
+      ></div>
+      <template id="profil_photographer_element">
+        <h1 class="name" role="Header (h1)"></h1>
+        <span class="lieu"></span>
+        <p class="tagline" role="Text"></p>
+        <div class="tags" role="links" aria-label="tags"></div>
+        <button role="Button" aria-label="Contact Me">Contactez-moi</button>
+        <img src="../../data/Mimi/Portrait_Nora.jpg" alt="" role="Image" />
+        <div>
+          <span class="like">297 081</span>
+          <span class="price">300€ / jour</span>
+        </div>
+      </template>
     </main>
-    <script src="../scripts/js.js"></script>
+    <script src="../scripts/index.js"></script>
   </body>
 </html>
