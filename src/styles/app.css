@@ -20,12 +20,10 @@ body {
 }
 .header_index nav {
   align-self: center;
-}
-.header_index nav ul {
   display: flex;
   list-style: none;
 }
-.header_index nav ul li {
+.header_index nav span {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
@@ -35,7 +33,7 @@ body {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
 }
-.header_index nav ul li:hover {
+.header_index nav span:hover {
   border: 0.5px solid blue;
   border-radius: 11px;
 }

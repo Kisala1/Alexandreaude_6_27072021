@@ -22,15 +22,14 @@ body {
   }
   nav {
     align-self: center;
-    ul {
-      display: flex;
-      list-style: none;
-      li {
-        @include mixins.styleLinkTags;
-      }
-      li:hover {
-        @include mixins.styleLinkTagsHover;
-      }
+
+    display: flex;
+    list-style: none;
+    span {
+      @include mixins.styleLinkTags;
+    }
+    span:hover {
+      @include mixins.styleLinkTagsHover;
     }
   }
 }

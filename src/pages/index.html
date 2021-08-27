@@ -13,27 +13,14 @@
   <body>
     <header class="header_index" role="banner">
       <a href="index.html">
-        <img
-          src="../image/Logo_Ficheye.png"
-          alt="Fisheye Home page"
-          role="Image link"
-        />
+        <img src="../image/Logo_Ficheye.png" alt="Fisheye Home page" />
       </a>
-      <nav role="links (nav)" aria-label="photographer categories">
-        <ul role="links list">
-          <li role="link" aria-label="tag">#Portrait</li>
-          <li role="link" aria-label="tag">#Art</li>
-          <li role="link" aria-label="tag">#Fashion</li>
-          <li role="link" aria-label="tag">#Architecture</li>
-          <li role="link" aria-label="tag">#Travel</li>
-          <li role="link" aria-label="tag">#Sport</li>
-          <li role="link" aria-label="tag">#Animals</li>
-          <li role="link" aria-label="tag">#Events</li>
-        </ul>
+      <nav aria-label="photographer categories">
+        <div class="tagsMenu"></div>
       </nav>
     </header>
     <main class="container" role="main">
-      <h1 role="header (h1)">Nos photographes</h1>
+      <h1>Nos photographes</h1>
       <div
         id="profil_photographer"
         class="profil_photographer"
@@ -49,7 +36,7 @@
             <span class="lieu"></span>
             <p class="tagline"></p>
             <strong class="price"></strong>
-            <div class="tags" role="links" aria-label="tags"></div>
+            <div class="tags" aria-label="tags"></div>
           </figcaption>
         </figure>
       </template>
