@@ -1,16 +1,70 @@
 @use "../theme";
 @use "../mixins";
 
-
+body {
+  margin: 20px 100px;
+}
 .header_photographer {
   img {
-    width: 30%;
+    width: 20%;
   }
 }
-h1 {
-  color: theme.$secondary-color;
+.profil {
+  padding: 30px;
+  background-color: theme.$bg-color;
+  display: flex;
+  justify-content: space-between;
+  .name {
+  color: theme.$primary-color;
   font-weight: 400;
   font-size: xx-large;
-  text-align: center;
-}
 
+  }
+  .lieu {
+  color: theme.$secondary-color;
+  }
+  .tagline {
+    color: theme.$input-color;
+  }
+  .tags{
+    span {
+      @include mixins.styleLinkTags;
+      &:hover {
+        @include mixins.styleLinkTagsHover;
+      }
+    }
+  }
+  button {
+    background-color: theme.$secondary-color;
+    color: #fff;
+    border: none;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:active {
+      background-color: darken(theme.$secondary-color, 3%);
+    }
+  }
+  img {
+      overflow: hidden;
+      height: 22em;
+      object-fit: cover;
+      clip-path: circle(25%);
+  }
+}
+.details {
+  background-color: lighten(theme.$bg-secondary-color,15%);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  width: 220px;
+  height: 50px;
+}

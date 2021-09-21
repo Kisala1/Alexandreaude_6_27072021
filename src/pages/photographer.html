@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <meta charset="UTF-8" />
-  <title>FishEye_Mimi Keel</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../styles/app.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-    rel="stylesheet"
-  />
+  <head>
+    <meta charset="UTF-8" />
+    <title>FishEye_Mimi Keel</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../styles/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  </head>
+
   <body>
     <header class="header_photographer" role="banner">
       <a href="../pages/index.html">
@@ -27,19 +31,27 @@
         class="profil_photographer"
         aria-label="profils photographer"
       ></div>
-      <template id="profil_photographer_element">
-        <h1 class="name" role="Header (h1)"></h1>
-        <span class="lieu"></span>
-        <p class="tagline" role="Text"></p>
-        <div class="tags" role="links" aria-label="tags"></div>
+      <!-- <template id="profil_photographer_element"> -->
+       <div class="profil">
+         <div class="description">
+            <h1 class="name" role="Header (h1)">Mimi Keel</h1>
+            <span class="lieu">london, UK</span>
+            <p class="tagline" role="Text"> voir le beau ...</p>
+              <div class="tags" role="links" aria-label="tags">
+                <span>#tag</span>
+                <span>#tag</span>
+                <span>#tag</span>
+              </div>
+          </div>
         <button role="Button" aria-label="Contact Me">Contactez-moi</button>
         <img src="../../data/Mimi/Portrait_Nora.jpg" alt="" role="Image" />
-        <div>
-          <span class="like">297 081</span>
+      </div>
+        <div class="details">
+          <span class="like">297 081 <i class="fas fa-heart"></i></span>
           <span class="price">300€ / jour</span>
         </div>
-      </template>
+      <!-- </template> -->
     </main>
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/photographer.js"></script>
   </body>
 </html>

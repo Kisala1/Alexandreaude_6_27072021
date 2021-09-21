@@ -33,7 +33,7 @@ body {
     }
   }
 }
-h1 {
+.title_index {
   position: absolute;
   top: 1em;
   left: 75%;
@@ -84,5 +84,32 @@ figure {
         @include mixins.styleLinkTagsHover;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .header_index {
+    min-width: 100%;
+    justify-content: center;
+  }
+  .title_index{
+    position: initial;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header_index {
+    flex-wrap: wrap;
+    .tagsMenu{
+      display: flex;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  .profil_photographer{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

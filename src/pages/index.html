@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
   <meta charset="UTF-8" />
   <title>FishEye</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,17 +11,18 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
     rel="stylesheet"
   />
+</head>
   <body>
     <header class="header_index" role="banner">
       <a href="index.html">
         <img src="../image/Logo_Ficheye.png" alt="Fisheye Home page" />
       </a>
       <nav aria-label="photographer categories">
-        <div class="tagsMenu"></div>
+        <div class="tagsMenu tags"></div>
       </nav>
     </header>
     <main class="container" role="main">
-      <h1>Nos photographes</h1>
+      <h1 class="title_index">Nos photographes</h1>
       <div
         id="profil_photographer"
         class="profil_photographer"
@@ -28,8 +30,8 @@
       ></div>
       <template id="profil_photographer_element">
         <figure>
-          <a href="photographer.html">
-            <img class="portrait" src="../../data/Mimi/Portrait_Nora.jpg" />
+          <a href="photographer.html" class="lien">
+            <img class="portrait"/>
             <h2 class="name"></h2>
           </a>
           <figcaption class="description">

@@ -38,7 +38,7 @@ body {
   border-radius: 11px;
 }
 
-h1 {
+.title_index {
   position: absolute;
   top: 1em;
   left: 75%;
@@ -101,15 +101,105 @@ figure h2 {
   border-radius: 11px;
 }
 
-.header_photographer img {
-  width: 30%;
+@media screen and (max-width: 1500px) {
+  .header_index {
+    min-width: 100%;
+    justify-content: center;
+  }
+
+  .title_index {
+    position: initial;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header_index {
+    flex-wrap: wrap;
+  }
+  .header_index .tagsMenu {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profil_photographer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+body {
+  margin: 20px 100px;
 }
 
-h1 {
-  color: #901c1c;
+.header_photographer img {
+  width: 20%;
+}
+
+.profil {
+  padding: 30px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+}
+.profil .name {
+  color: #d3573c;
   font-weight: 400;
   font-size: xx-large;
-  text-align: center;
+}
+.profil .lieu {
+  color: #901c1c;
+}
+.profil .tagline {
+  color: #525252;
+}
+.profil .tags span {
+  cursor: pointer;
+  color: #901c1c;
+  font-weight: 500;
+  font-size: small;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+}
+.profil .tags span:hover {
+  border: 0.5px solid blue;
+  border-radius: 11px;
+}
+.profil button {
+  background-color: #901c1c;
+  color: #fff;
+  border: none;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profil button:active {
+  background-color: #831a1a;
+}
+.profil img {
+  overflow: hidden;
+  height: 22em;
+  object-fit: cover;
+  clip-path: circle(25%);
+}
+
+.details {
+  background-color: #e18d7a;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  width: 220px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=app.css.map */
