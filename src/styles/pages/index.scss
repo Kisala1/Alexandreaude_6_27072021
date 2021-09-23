@@ -45,7 +45,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
-figure {
+.figure_index {
   display: flex;
   flex-direction: column;
   margin: 1em;

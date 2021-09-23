@@ -27,30 +27,81 @@
 
     <main>
       <div
-        id="profil_photographer"
-        class="profil_photographer"
-        aria-label="profils photographer"
+        id="details_profil_photographer"
+        class="details_profil_photographer"
+        aria-label="details_profils photographer"
       ></div>
-      <!-- <template id="profil_photographer_element"> -->
+      <template id="details_profil_photographer_element">
        <div class="profil">
          <div class="description">
-            <h1 class="name" role="Header (h1)">Mimi Keel</h1>
-            <span class="lieu">london, UK</span>
-            <p class="tagline" role="Text"> voir le beau ...</p>
+            <h1 class="name" role="Header (h1)"></h1>
+            <span class="lieu"></span>
+            <p class="tagline" role="Text"></p>
               <div class="tags" role="links" aria-label="tags">
-                <span>#tag</span>
-                <span>#tag</span>
-                <span>#tag</span>
               </div>
           </div>
         <button role="Button" aria-label="Contact Me">Contactez-moi</button>
-        <img src="../../data/Mimi/Portrait_Nora.jpg" alt="" role="Image" />
+        <img class="portrait" src="" alt=""/>
       </div>
         <div class="details">
           <span class="like">297 081 <i class="fas fa-heart"></i></span>
-          <span class="price">300€ / jour</span>
+          <span class="price"></span>
         </div>
-      <!-- </template> -->
+        <div class="container_filter">
+          <span>Trier par </span>
+          <nav class="filter_photos">
+            <ul class="menu_filter">
+              <li class="popularity">Popularité <i class="arrow fas fa-chevron-down"></i></li>
+              <li class="date">Date</li>
+              <li class="title">Titre</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="container_img">
+          <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
+          <figcaption>
+            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
+          </figcaption>
+        </figure>
+        </div>
+      </template>
     </main>
     <script src="../scripts/photographer.js"></script>
   </body>

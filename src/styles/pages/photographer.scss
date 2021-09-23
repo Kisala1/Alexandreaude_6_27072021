@@ -14,6 +14,7 @@ body {
   background-color: theme.$bg-color;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
   .name {
   color: theme.$primary-color;
   font-weight: 400;
@@ -43,7 +44,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     &:active {
-      background-color: darken(theme.$secondary-color, 3%);
+      background-color: darken(theme.$secondary-color, 4%);
     }
   }
   img {
@@ -67,4 +68,54 @@ body {
   right: 50px;
   width: 220px;
   height: 50px;
+}
+
+.container_filter{
+  display: flex;
+  flex-direction: row;
+  span {
+    margin: 10px 0;
+  }
+}
+.filter_photos{
+  margin-left: 10px;
+  .menu_filter {
+    position: absolute;
+    list-style: none;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 40px;
+    li {
+      background-color: theme.$secondary-color;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: darken(theme.$secondary-color , 4%);
+      }
+    }
+    .fas {
+      margin-left: 5px;
+    }
+  }
+}
+.container_img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-top: 20px;
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: right 40%;
+  }
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    color: theme.$secondary-color;
+    font-size: large;
+  }
 }

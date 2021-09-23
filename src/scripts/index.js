@@ -91,7 +91,7 @@ function displayPhotographer (photographer) {
   const el = document.importNode(profilElementTemplate.content, true)
   el.querySelector('figure').dataset.photographerId = photographer.id
   const imgSelector = el.querySelector('.portrait')
-
+  el.querySelector('a').href = 'photographer.html?id=' + photographer.id
   imgSelector.alt = photographer.name
   imgSelector.src = '../../data/Portraits/' + photographer.portrait
   el.querySelector('.lieu').textContent =
