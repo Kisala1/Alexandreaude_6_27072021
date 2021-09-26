@@ -40,11 +40,10 @@
               <div class="tags" role="links" aria-label="tags">
               </div>
           </div>
-        <button role="Button" aria-label="Contact Me">Contactez-moi</button>
         <img class="portrait" src="" alt=""/>
       </div>
         <div class="details">
-          <span class="like">297 081 <i class="fas fa-heart"></i></span>
+          <span class="like">297 081 </span>
           <span class="price"></span>
         </div>
         <div class="container_filter">
@@ -58,48 +57,28 @@
           </nav>
         </div>
         <div class="container_img">
-          <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../../data/Mimi/Animals_Rainbow.jpg" alt="">
-          <figcaption>
-            <span class="title">Oiseau</span> <span class="like">12 <i class="fas fa-heart"></i></span>
-          </figcaption>
-        </figure>
+        </div>
+
+        <div id= "modal_form" class="modal-mask">
+          <div class="modal">
+            <div class="modal-title">
+              <h2> Contactez-moi <br> Mimi Keel</h2>
+              <i class="cross fas fa-times"></i>
+            </div>
+            <div class="modal-body">
+              <form action="" class="form">
+                <label for="firstname">Prénom</label>
+                <input type="text" name="firstname" id="firstname">
+                <label for="lastname">Nom</label>
+                <input type="text" name="lastname" id="lastname">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="message">Votre message</label>
+                <input type="text" name="message" id="message">
+                <input type="button" value="Envoyer" id="btn_send">
+              </form>
+            </div>
+          </div>
         </div>
       </template>
     </main>

@@ -1,4 +1,4 @@
-fetch('../../data/fisheyeData.json')
+fetch('/data/fisheyeData.json')
   .then((response) => {
     if (!response.ok) {
       throw new Error('HTTP error ' + response.status)
@@ -49,6 +49,7 @@ function displayTagsMenu (photographers) {
 
 /**
  * Permet de filtrer au clic les photographes grâce aux tags
+ *
  * @param {Array} Array photographers
  */
 
@@ -56,15 +57,18 @@ function addListenersToTags (photographers) {
   const tagsElts = document.querySelectorAll('.tags span')
   tagsElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
-      // Cible tag au clic et renvoie ce même tag
+      // Cible tag au clic et retourne ce même tag
       // sans ' # ' et sans majuscule
       const tag = e.target.textContent.slice(1).toLowerCase()
+
       // Retourne un nouveau tableau avec tous les éléments
       // qui remplissent la condition déterminée par la fonction
       const photographersWithTag = photographers.filter(elt => elt.tags.includes(tag))
+
       // Créer un nouveau tableau avec les résultats de l'appel de la fonction
       // fournie sur chaque élément du tableau
       const ids = photographersWithTag.map(elt => elt.id)
+
       document.querySelectorAll('figure').forEach(photographer => {
         // Si le tableau ids contient l'Id du photographe (en nombre)
         if (ids.includes(parseInt(photographer.dataset.photographerId))) {
@@ -89,11 +93,12 @@ function displayPhotographer (photographer) {
     'profil_photographer_element'
   )
   const el = document.importNode(profilElementTemplate.content, true)
-  el.querySelector('figure').dataset.photographerId = photographer.id
   const imgSelector = el.querySelector('.portrait')
+
+  el.querySelector('figure').dataset.photographerId = photographer.id
   el.querySelector('a').href = 'photographer.html?id=' + photographer.id
   imgSelector.alt = photographer.name
-  imgSelector.src = '../../data/Portraits/' + photographer.portrait
+  imgSelector.src = '../../data/Photographers_ID_Photos/' + photographer.portrait
   el.querySelector('.lieu').textContent =
     photographer.city + ', ' + photographer.country
   el.querySelector('.tagline').textContent = photographer.tagline

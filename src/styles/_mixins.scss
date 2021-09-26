@@ -14,3 +14,43 @@
   border: 0.5px solid blue;
   border-radius: 11px;
 }
+
+@mixin heart {
+  content: "\f004";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+@mixin effectButton {
+  border: none;
+  background-color: theme.$bg-primary-color;
+  color: #fff;
+  font-weight: 700;
+  height: 50px;
+  padding: 10px;
+  margin-left: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+    &:active {
+      background-color: darken(theme.$bg-primary-color, 4%);
+    }
+}
+
+@mixin crossCloseModal {
+  content: "\f00d";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
