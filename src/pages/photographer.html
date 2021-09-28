@@ -11,7 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
@@ -32,16 +37,15 @@
         aria-label="details_profils photographer"
       ></div>
       <template id="details_profil_photographer_element">
-       <div class="profil">
-         <div class="description">
+        <div class="profil">
+          <div class="description">
             <h1 class="name" role="Header (h1)"></h1>
             <span class="lieu"></span>
             <p class="tagline" role="Text"></p>
-              <div class="tags" role="links" aria-label="tags">
-              </div>
+            <div class="tags" role="links" aria-label="tags"></div>
           </div>
-        <img class="portrait" src="" alt=""/>
-      </div>
+          <img class="portrait" src="" alt="" />
+        </div>
         <div class="details">
           <span class="like">297 081 </span>
           <span class="price"></span>
@@ -50,38 +54,102 @@
           <span>Trier par </span>
           <nav class="filter_photos">
             <ul class="menu_filter">
-              <li class="popularity">Popularité <i class="arrow fas fa-chevron-down"></i></li>
+              <li class="popularity">
+                Popularité <i class="arrow fas fa-chevron-down"></i>
+              </li>
               <li class="date">Date</li>
               <li class="title">Titre</li>
             </ul>
           </nav>
         </div>
-        <div class="container_img">
-        </div>
+        <div class="container_img"></div>
 
-        <div id= "modal_form" class="modal-mask">
+        <div id="modal_form" class="modal-mask">
           <div class="modal">
             <div class="modal-title">
-              <h2> Contactez-moi <br> Mimi Keel</h2>
+              <h2 class="title-modal">
+                Contactez-moi <br />
+                Mimi Keel
+              </h2>
               <i class="cross fas fa-times"></i>
             </div>
             <div class="modal-body">
-              <form action="" class="form">
-                <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" id="firstname">
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" id="lastname">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="message">Votre message</label>
-                <input type="text" name="message" id="message">
-                <input type="button" value="Envoyer" id="btn_send">
+              <form
+                id="form"
+                class="form"
+                action="photographer.html"
+                method="GET"
+              >
+                <div class="formData">
+                  <label for="firstname">Prénom</label>
+                  <input
+                    class="text-control"
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                  />
+                </div>
+                <div class="formData">
+                  <label for="lastname">Nom</label>
+                  <input
+                    class="text-control"
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                  />
+                </div>
+                <div class="formData">
+                  <label for="email">Email</label>
+                  <input
+                    class="text-control"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div class="formData">
+                  <label for="message">Votre message</label>
+                  <input
+                    class="text-control"
+                    type="text"
+                    name="message"
+                    id="message"
+                  />
+                </div>
+                <input type="submit" value="Envoyer" id="btn_send" />
               </form>
+              <div class="formSuccessMessage">
+                <p>
+                  Votre message a bien été envoyé. <br />
+                  <br />
+                  Notre photographe vous répondra dans les plus brefs délais.
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+        <div id="modal_img" class="modal-mask-img">
+          <div class="modal-img">
+            <div class="close-modal-img">
+              <i class="cross fas fa-times"></i>
+            </div>
+            <figure class="figure-modal">
+              <div class="container-img">
+                <i class="arrow fas fa-chevron-left"></i>
+                <img
+                  src="/data/195/Architecure_Contrast.jpg"
+                  alt=""
+                  class="img-modal"
+                />
+                <i class="arrow fas fa-chevron-right"></i>
+              </div>
+              <figcaption class="modal-description">bla bla</figcaption>
+            </figure>
           </div>
         </div>
       </template>
     </main>
     <script src="../scripts/photographer.js"></script>
+    <!-- <script src="../scripts/form.js"></script> -->
   </body>
 </html>

@@ -1,7 +1,7 @@
-@use "../theme";
-@use "../mixins";
+@use '../theme';
+@use '../mixins';
 
-body{
+body {
   margin: 0 250px;
 }
 .header_photographer {
@@ -29,18 +29,26 @@ body{
     font-weight: 400;
     font-size: 3em;
     button {
-      @include mixins.effectButton
+      @include mixins.effectButton;
+      &:hover {
+        background-color: lighten(theme.$bg-secondary-color, 15%);
+        color: #000;
+      }
+      &:focus {
+        background-color: lighten(theme.$bg-secondary-color, 15%);
+        color: #000;
+      }
+    }
   }
-}
   .lieu {
-  color: theme.$secondary-color;
-  font-size: 1.2em;
+    color: theme.$secondary-color;
+    font-size: 1.2em;
   }
   .tagline {
     color: theme.$input-color;
-    margin: 20px 0 10px 0
+    margin: 20px 0 10px 0;
   }
-  .tags{
+  .tags {
     span {
       @include mixins.styleLinkTags;
       font-size: 1em;
@@ -51,19 +59,18 @@ body{
     }
   }
 
-
   img {
-      justify-self: right;
-      align-self: center;
-      overflow: hidden;
-      height: 22em;
-      object-fit: cover;
-      clip-path: circle(25%);
-      box-shadow: 10px 5px 5px #000;
+    justify-self: right;
+    align-self: center;
+    overflow: hidden;
+    height: 22em;
+    object-fit: cover;
+    clip-path: circle(25%);
+    box-shadow: 10px 5px 5px #000;
   }
 }
 .details {
-  background-color: lighten(theme.$bg-secondary-color,15%);
+  background-color: lighten(theme.$bg-secondary-color, 15%);
   font-weight: 700;
   display: flex;
   justify-content: space-between;
@@ -77,18 +84,18 @@ body{
   width: 220px;
   height: 50px;
   .like::after {
-    @include mixins.heart
+    @include mixins.heart;
   }
 }
 
-.container_filter{
+.container_filter {
   display: flex;
   flex-direction: row;
   span {
     margin: 10px 0;
   }
 }
-.filter_photos{
+.filter_photos {
   margin-left: 10px;
   .menu_filter {
     position: absolute;
@@ -102,7 +109,7 @@ body{
       padding: 10px;
       cursor: pointer;
       &:hover {
-        background-color: darken(theme.$secondary-color , 4%);
+        background-color: darken(theme.$secondary-color, 4%);
       }
     }
     .fas {

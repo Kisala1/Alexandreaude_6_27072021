@@ -1,63 +1,156 @@
-@use "theme";
-@use "mixins";
+@use 'theme';
+@use 'mixins';
+
+// Style modal formulaire \\
 
 .modal-mask {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    z-index: 9999;
-    background: rgba(0,0,0,.4);
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    max-width: 400px;
-    margin: 20vh auto 20px;
-    padding: 0 20px;
-    background-color: lighten(theme.$bg-secondary-color,15%);
-    box-shadow: 0 0 8px rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  max-width: 400px;
+  margin: 20vh auto 20px;
+  padding: 0 20px;
+  background-color: lighten(theme.$bg-secondary-color, 15%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 .modal-title {
-    display: flex;
-    justify-content: space-between;
-    h2 {
-        margin: 20px 0;
-        font-size: 2em;
-        font-weight: 500;
-    }
-    .cross {
-        color: #fff;
-        font-size: 1.5em;
-        margin-top: 30px;
-        cursor: pointer;
-    }
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    margin: 20px 0;
+    font-size: 2em;
+    font-weight: 500;
+  }
+  .cross {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 30px;
+    cursor: pointer;
+  }
 }
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.formData {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    input {
-        margin-bottom: 10px;
-        min-height: 30px;
-        border: none;
-        border-radius: 5px;
-    }
-    #message {
-        height: 100px
-    }
+  .text-control {
+    padding: 5px;
+    margin-bottom: 10px;
+    min-height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+  }
+  #message {
+    height: 100px;
+  }
 }
 #btn_send {
-    @include mixins.effectButton;
-    align-self: flex-start;
-    width: 100px;
-    margin: 10px 10px 10px 0;
+  @include mixins.effectButton;
+  font-size: small;
+  align-self: flex-start;
+  width: 100px;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(theme.$bg-primary-color, 5%);
+  }
+  &:focus {
+    background-color: darken(theme.$bg-primary-color, 5%);
+  }
+}
+.formSuccessMessage {
+  display: none;
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.7em;
+  color: red;
+  display: block;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible='true']::after {
+  opacity: 1;
+}
+.formData[data-error-visible='true'] .text-control {
+  border: 2px solid red;
+}
+
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
+
+// Style modal image \\
+
+.modal-mask-img {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 9999;
+  background-color: #fff;
+}
+.modal-img {
+  width: 80%;
+  overflow: hidden;
+  margin: 5vh auto 20px;
+  padding: 0 20px;
+  background-color: #fff;
+}
+.close-modal-img {
+  display: flex;
+  justify-content: end;
+  .cross {
+    margin: 10px;
+    font-size: 3em;
+    color: theme.$secondary-color;
     cursor: pointer;
+  }
+}
+.figure-modal {
+  display: flex;
+  flex-direction: column;
+}
+.container-img {
+  display: flex;
+  object-fit: cover;
+  .arrow {
+    margin: 20px;
+    font-size: 3em;
+    color: theme.$secondary-color;
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+  }
+}
+.modal-description {
+  margin: 10px 0 0 70px;
+  color: theme.$secondary-color;
+  font-size: 1.3em;
 }

@@ -35,7 +35,9 @@ body {
   border-radius: 11px;
 }
 .header_index nav span:hover {
-  border: 0.5px solid blue;
+  border: 0.5px solid #901c1c;
+  background-color: #901c1c;
+  color: #fff;
   border-radius: 11px;
 }
 
@@ -98,7 +100,9 @@ body {
   border-radius: 11px;
 }
 .description .tags span:hover {
-  border: 0.5px solid blue;
+  border: 0.5px solid #901c1c;
+  background-color: #901c1c;
+  color: #fff;
   border-radius: 11px;
 }
 
@@ -171,8 +175,13 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.profil .name button:active {
-  background-color: #7f1919;
+.profil .name button:hover {
+  background-color: #e18d7a;
+  color: #000;
+}
+.profil .name button:focus {
+  background-color: #e18d7a;
+  color: #000;
 }
 .profil .lieu {
   color: #901c1c;
@@ -195,7 +204,9 @@ body {
   font-weight: 700;
 }
 .profil .tags span:hover {
-  border: 0.5px solid blue;
+  border: 0.5px solid #901c1c;
+  background-color: #901c1c;
+  color: #fff;
   border-radius: 11px;
 }
 .profil img {
@@ -341,18 +352,21 @@ body {
   cursor: pointer;
 }
 
-.form {
+.formData {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.form input {
+.formData .text-control {
+  padding: 5px;
   margin-bottom: 10px;
   min-height: 30px;
+  outline: none;
   border: none;
   border-radius: 5px;
+  font-size: large;
 }
-.form #message {
+.formData #message {
   height: 100px;
 }
 
@@ -366,13 +380,104 @@ body {
   margin-left: 100px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: small;
   align-self: flex-start;
   width: 100px;
   margin: 10px 10px 10px 0;
   cursor: pointer;
 }
-#btn_send:active {
-  background-color: #7f1919;
+#btn_send:hover {
+  background-color: #7b1818;
+}
+#btn_send:focus {
+  background-color: #7b1818;
+}
+
+.formSuccessMessage {
+  display: none;
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.7em;
+  color: red;
+  display: block;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.formData[data-error-visible=true]::after {
+  opacity: 1;
+}
+
+.formData[data-error-visible=true] .text-control {
+  border: 2px solid red;
+}
+
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
+
+.modal-mask-img {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+.modal-img {
+  width: 80%;
+  overflow: hidden;
+  margin: 5vh auto 20px;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+.close-modal-img {
+  display: flex;
+  justify-content: end;
+}
+.close-modal-img .cross {
+  margin: 10px;
+  font-size: 3em;
+  color: #901c1c;
+  cursor: pointer;
+}
+
+.figure-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-img {
+  display: flex;
+  object-fit: cover;
+}
+.container-img .arrow {
+  margin: 20px;
+  font-size: 3em;
+  color: #901c1c;
+  cursor: pointer;
+}
+.container-img img {
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+}
+
+.modal-description {
+  margin: 10px 0 0 70px;
+  color: #901c1c;
+  font-size: 1.3em;
 }
 
 /*# sourceMappingURL=app.css.map */
