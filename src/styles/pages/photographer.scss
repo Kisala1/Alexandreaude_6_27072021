@@ -119,9 +119,9 @@ body {
 }
 .container_img {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  gap: 100px;
+  gap: 40px;
   margin-top: 20px;
   img {
     width: 100%;
