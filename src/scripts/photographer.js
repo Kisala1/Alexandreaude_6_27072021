@@ -1,5 +1,6 @@
-// Permet de récupérer l'id du photographe sur son profil
+import factory from './MediaFactory.js'
 
+// Permet de récupérer l'id du photographe sur son profil
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
 const idPhotograph = parseInt(urlParams.get('id'))
@@ -98,34 +99,27 @@ function addMediaToPhotographProfil (photographers, medias) {
   // find renvoie le 1er élement trouvé
   // Récupère l'id associé au photographe correspondant
   const photographer = photographers.find((elt) => elt.id === idPhotograph)
+  // Exécute la fonction avec les infos de photographer
   profilTemplatePhotographer(photographer)
   // Retourne un tableau avec les médias correspondant à l'Id à ce photographe
   const mediaPhotographs = medias.filter(
     (elt) => elt.photographerId === idPhotograph
   )
 
-  const containerImg = document.querySelector('.container_img')
+  function titleModalForm () {
+    const buttonProfil = document.querySelector('.buttonProfil')
+    const TitleModal = document.querySelector('.title-modal')
+    TitleModal.textContent = buttonProfil.textContent + '\n' + photographer.name
+    console.log(buttonProfil.textContent + '\n' + photographer.name)
+  }
+  titleModalForm()
+
+  const container = document.querySelector('.container_img')
   for (const mediaPhotograph of mediaPhotographs) {
-    const figure = document.createElement('figure')
-    const img = document.createElement('img')
-    img.src = '/data/' + idPhotograph + '/' + mediaPhotograph.image
-    img.alt = mediaPhotograph.title
-    img.className = 'media'
-    const figcaption = document.createElement('figcaption')
-
-    const titleImage = document.createElement('span')
-    titleImage.className = 'title_image' /* A ENLEVER SI NON UTILISE */
-    titleImage.textContent = mediaPhotograph.title
-
-    const likeImage = document.createElement('span')
-    likeImage.className = 'like_image'
-    likeImage.textContent = '12 '
-
-    containerImg.appendChild(figure)
-    figure.appendChild(img)
-    figure.appendChild(figcaption)
-    figcaption.appendChild(titleImage)
-    figcaption.appendChild(likeImage)
+    const media = factory(mediaPhotograph)
+    if (media !== undefined) {
+      media.displayInlist(container)
+    }
   }
 }
 

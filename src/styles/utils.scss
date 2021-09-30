@@ -22,22 +22,22 @@
   width: 80%;
   max-width: 400px;
   margin: 20vh auto 20px;
-  padding: 0 20px;
+  padding: 20px;
   background-color: lighten(theme.$bg-secondary-color, 15%);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 .modal-title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
   h2 {
-    margin: 20px 0;
     font-size: 2em;
     font-weight: 500;
   }
   .cross {
     color: #fff;
     font-size: 1.5em;
-    margin-top: 30px;
+    margin-top: 10px;
     cursor: pointer;
   }
 }
