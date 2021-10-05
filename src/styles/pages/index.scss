@@ -1,5 +1,5 @@
-@use "../theme";
-@use "../mixins";
+@use '../theme';
+@use '../mixins';
 
 *,
 *:before,
@@ -17,8 +17,15 @@ body {
   display: flex;
   width: 70%;
   justify-content: space-around;
+  margin-top: 20px;
   a {
     cursor: pointer;
+    img {
+      width: 350px;
+    }
+  }
+  .title_index_responsive {
+    display: none;
   }
   nav {
     align-self: center;
@@ -35,7 +42,7 @@ body {
 }
 .title_index {
   position: absolute;
-  top: 1em;
+  top: 40px;
   left: 75%;
   color: theme.$secondary-color;
   font-weight: 400;
@@ -101,13 +108,33 @@ body {
 
 @media screen and (max-width: 1200px) {
   .header_index {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    .container_logo_title_responsive {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 70%;
+      }
+      .title_index_responsive {
+        display: block;
+        white-space: nowrap;
+        color: theme.$secondary-color;
+        font-weight: 400;
+        font-size: 1.3em;
+      }
+    }
     .tagsMenu {
       display: flex;
       margin: 20px 0;
       flex-wrap: wrap;
       justify-content: center;
     }
+  }
+  .title_index {
+    display: none;
   }
   .profil_photographer {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -17,11 +17,12 @@ fetch('/data/fisheyeData.json')
     dropDownMenu()
     openModalImg()
     const modalForm = document.getElementById('modal_form')
-    const modalImg = document.getElementById('modal_img')
+    // const modalImg = document.getElementById('modal_img') Valeur null en dehors
+    // de l'autre template
     const buttonProfil = document.querySelector('.buttonProfil')
     const closeModalForm = document.querySelector('.close_modal-form')
     const closeModalImg = document.querySelector('.close_modal-img')
-    addModal(modalForm, modalImg, buttonProfil, closeModalForm, closeModalImg)
+    addModal(modalForm, buttonProfil, closeModalForm, closeModalImg)
 
     // Définition des inputs
     const form = document.querySelector('#form')
@@ -108,9 +109,9 @@ function addMediaToPhotographProfil (photographers, medias) {
 
   function titleModalForm () {
     const buttonProfil = document.querySelector('.buttonProfil')
-    const TitleModal = document.querySelector('.title-modal')
-    TitleModal.textContent = buttonProfil.textContent + '\n' + photographer.name
-    console.log(buttonProfil.textContent + '\n' + photographer.name)
+    const titleModal = document.querySelector('.title-modal')
+    titleModal.textContent = buttonProfil.textContent + '\n' + photographer.name
+    console.log(titleModal.textContent)
   }
   titleModalForm()
 
@@ -127,12 +128,14 @@ function openModalImg () {
   const mediaElts = document.querySelectorAll('.media')
   mediaElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
-      const media = e.target.src
+      const media = e.target
+      const mediaSource = e.target.src
 
       const modalImg = document.querySelector('.modal-mask-img')
       const imgModal = document.querySelector('.img-modal')
       modalImg.style.display = 'block'
-      imgModal.src = media
+      imgModal.src = mediaSource
+      document.querySelector('.modal-description').textContent = media.alt
     })
   })
 }
@@ -144,20 +147,20 @@ function openModalImg () {
 
 function dropDownMenu () {
   const arrow = document.querySelector('.arrow')
-  const menuFilter = document.querySelector('.menu_filter')
+  const menuClassify = document.querySelector('.menu_classify')
   arrow.addEventListener('click', () => {
-    if (menuFilter.style.maxHeight === '40px') {
+    if (menuClassify.style.maxHeight === '40px') {
       arrow.style.transform = 'rotate(180deg)'
       arrow.style.transition = 'all 0.2s linear'
-      menuFilter.style.boxShadow = '0px 3px 3px 1px rgba(0,0,0,0.3)'
-      menuFilter.style.transition = 'max-height 0.2s linear'
-      menuFilter.style.maxHeight = '123px'
+      menuClassify.style.boxShadow = '0px 3px 3px 1px rgba(0,0,0,0.3)'
+      menuClassify.style.transition = 'max-height 0.2s linear'
+      menuClassify.style.maxHeight = '123px'
     } else {
       arrow.style.transform = 'rotate(0deg)'
       arrow.style.transition = 'all 0.2s linear'
-      menuFilter.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)'
-      menuFilter.style.transition = 'max-height 0.2s linear both'
-      menuFilter.style.maxHeight = '40px'
+      menuClassify.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)'
+      menuClassify.style.transition = 'max-height 0.2s linear both'
+      menuClassify.style.maxHeight = '40px'
     }
   })
 }
@@ -175,7 +178,7 @@ function dropDownMenu () {
  * @param {HTMLElement} crossModalTitle <i class="cross">
  */
 
-function addModal (modalBg, modalImg, buttonProfil, closeBtnForm, closeBtnImg) {
+function addModal (modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
   function launchModalForm () {
     modalBg.style.display = 'block'
   }
@@ -183,9 +186,9 @@ function addModal (modalBg, modalImg, buttonProfil, closeBtnForm, closeBtnImg) {
     modalBg.style.display = 'none'
   }
 
-  function closeModalImg () {
-    modalImg.style.display = 'none'
-  }
+  // function closeModalImg () {
+  //   modalImg.style.display = 'none'
+  // }
 
   // Ouvrir et fermer la modal form
 
@@ -199,13 +202,13 @@ function addModal (modalBg, modalImg, buttonProfil, closeBtnForm, closeBtnImg) {
 
   // Ouvrir et fermer la modal img
 
-  modalImg.addEventListener('click', (e) => {
-    if (e.target === modalImg) {
-      closeModalImg()
-    }
-  })
+  // modalImg.addEventListener('click', (e) => {
+  //   if (e.target === modalImg) {
+  //     closeModalImg()
+  //   }
+  // })
 
-  closeBtnImg.addEventListener('click', closeModalImg)
+  // closeBtnImg.addEventListener('click', closeModalImg)
 }
 
 // =========================================================

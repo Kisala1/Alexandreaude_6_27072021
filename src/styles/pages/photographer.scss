@@ -1,12 +1,15 @@
 @use '../theme';
 @use '../mixins';
 
-body {
-  margin: 0 250px;
+.body_photographer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 .header_photographer {
-  margin: 10px 0;
+  margin-top: 15px;
   img {
+    margin-left: -40px;
     width: 20%;
   }
 }
@@ -17,7 +20,7 @@ body {
   grid-template-rows: 260px;
   height: 300px;
   padding-top: 40px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   .description {
     text-align: start;
     padding-left: 50px;
@@ -88,16 +91,16 @@ body {
   }
 }
 
-.container_filter {
+.container_classify {
   display: flex;
   flex-direction: row;
   span {
     margin: 10px 0;
   }
 }
-.filter_photos {
+.classify_photos {
   margin-left: 10px;
-  .menu_filter {
+  .menu_classify {
     position: absolute;
     list-style: none;
     overflow: hidden;
@@ -117,6 +120,7 @@ body {
     }
   }
 }
+
 .container_img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -127,6 +131,7 @@ body {
   video {
     width: 100%;
     height: 300px;
+    border-radius: 5px;
     object-fit: cover;
     object-position: right 30%;
     cursor: pointer;
@@ -140,5 +145,72 @@ body {
     .like_image::after {
       @include mixins.heart;
     }
+  }
+}
+
+/**************** Form *********************/
+
+.formSuccessMessage {
+  display: none;
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.7em;
+  color: red;
+  display: block;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible='true']::after {
+  opacity: 1;
+}
+.formData[data-error-visible='true'] .text-control {
+  border: 2px solid red;
+}
+
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
+
+/**************** LightBox *********************/
+
+/****************** Responsive ******************/
+
+@media screen and (max-width: 1000px) {
+  .header_photographer {
+    img {
+      margin-left: 0;
+      width: 40%;
+    }
+  }
+  .profil {
+    background-color: #fff;
+    .name {
+      white-space: nowrap;
+      button {
+        position: fixed;
+        margin-left: 0;
+        padding: 10px 20px;
+        height: auto;
+        bottom: 5%;
+        left: 40%;
+        font-size: 0.4em;
+        font-weight: 500;
+      }
+    }
+  }
+  .details {
+    display: none;
+  }
+  .container_classify {
+    display: none;
+  }
+  .container_img {
+    grid-template-columns: 1fr;
   }
 }
