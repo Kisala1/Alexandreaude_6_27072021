@@ -20,13 +20,9 @@
   </head>
 
   <body class="body_photographer">
-    <header class="header_photographer" role="banner">
+    <header class="header_photographer">
       <a href="../pages/index.html">
-        <img
-          src="../image/Logo_Ficheye.png"
-          alt="Fisheye Home page"
-          role="Image link"
-        />
+        <img src="../image/Logo_Ficheye.png" alt="Fisheye Home page" />
       </a>
     </header>
 
@@ -34,28 +30,28 @@
       <div
         id="details_profil_photographer"
         class="details_profil_photographer"
-        aria-label="details_profils photographer"
       ></div>
       <template id="details_profil_photographer_element">
         <div class="profil">
           <div class="description">
-            <h1 class="name" role="Header (h1)"></h1>
+            <h1 class="name"></h1>
             <span class="lieu"></span>
-            <p class="tagline" role="Text"></p>
-            <div class="tags" role="links" aria-label="tags"></div>
+            <p class="tagline"></p>
+            <div class="tagsPhotographer"></div>
           </div>
           <img class="portrait" src="" alt="" />
         </div>
-        <div class="details">
+        <div class="detailsPhotographer">
           <span class="like">297 081 </span>
           <span class="price"></span>
         </div>
         <div class="container_classify">
           <span>Trier par </span>
           <nav class="classify_photos">
-            <ul class="menu_classify">
+            <ul id="dropDownMenu" class="dropDownMenu">
               <li class="popularity">
-                Popularité <i class="arrow fas fa-chevron-down"></i>
+                Popularité
+                <i id="arrow_dropDownMenu" class="arrow_dropDownMenu fas fa-chevron-down"></i>
               </li>
               <li class="date">Date</li>
               <li class="title">Titre</li>

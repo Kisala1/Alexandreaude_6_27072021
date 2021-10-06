@@ -1,22 +1,5 @@
 @use 'theme';
 
-@mixin styleLinkTags {
-  cursor: pointer;
-  color: theme.$secondary-color;
-  font-weight: 500;
-  font-size: small;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  border: 0.5px solid #c4c4c4;
-  border-radius: 11px;
-}
-@mixin styleLinkTagsHover {
-  border: 0.5px solid theme.$bg-primary-color;
-  background-color: theme.$bg-primary-color;
-  color: #fff;
-  border-radius: 11px;
-}
-
 @mixin heart {
   content: '\f004';
   font-weight: 900;

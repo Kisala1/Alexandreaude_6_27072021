@@ -1,18 +1,6 @@
 @use '../theme';
 @use '../mixins';
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: theme.$font-primary;
-}
-
 .header_index {
   display: flex;
   width: 70%;
@@ -32,12 +20,6 @@ body {
 
     display: flex;
     list-style: none;
-    span {
-      @include mixins.styleLinkTags;
-    }
-    span:hover {
-      @include mixins.styleLinkTagsHover;
-    }
   }
 }
 .title_index {
@@ -72,24 +54,16 @@ body {
     font-size: xx-large;
     text-align: center;
   }
-}
-.description {
-  text-align: center;
-  .lieu {
-    color: theme.$secondary-color;
-    font-weight: 500;
-  }
-  .price {
-    color: theme.$input-color;
-    font-weight: 400;
-    font-size: small;
-  }
-  .tags {
-    span {
-      @include mixins.styleLinkTags;
-      &:hover {
-        @include mixins.styleLinkTagsHover;
-      }
+  .description {
+    text-align: center;
+    .lieu {
+      color: theme.$secondary-color;
+      font-weight: 500;
+    }
+    .price {
+      color: theme.$input-color;
+      font-weight: 400;
+      font-size: small;
     }
   }
 }

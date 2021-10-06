@@ -51,15 +51,9 @@
     color: theme.$input-color;
     margin: 20px 0 10px 0;
   }
-  .tags {
-    span {
-      @include mixins.styleLinkTags;
-      font-size: 1em;
-      font-weight: 700;
-      &:hover {
-        @include mixins.styleLinkTagsHover;
-      }
-    }
+  .tagProfil {
+    font-size: 1em;
+    font-weight: 700;
   }
 
   img {
@@ -72,7 +66,7 @@
     box-shadow: 10px 5px 5px #000;
   }
 }
-.details {
+.detailsPhotographer {
   background-color: lighten(theme.$bg-secondary-color, 15%);
   font-weight: 700;
   display: flex;
@@ -100,25 +94,6 @@
 }
 .classify_photos {
   margin-left: 10px;
-  .menu_classify {
-    position: absolute;
-    list-style: none;
-    overflow: hidden;
-    border-radius: 10px;
-    max-height: 40px;
-    li {
-      background-color: theme.$secondary-color;
-      color: #fff;
-      padding: 10px;
-      cursor: pointer;
-      &:hover {
-        background-color: darken(theme.$secondary-color, 4%);
-      }
-    }
-    .fas {
-      margin-left: 5px;
-    }
-  }
 }
 
 .container_img {
@@ -154,27 +129,6 @@
   display: none;
   margin: 20px 0;
   font-size: 1.5em;
-}
-
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.7em;
-  color: red;
-  display: block;
-  opacity: 0;
-  transition: 0.3s;
-}
-.formData[data-error-visible='true']::after {
-  opacity: 1;
-}
-.formData[data-error-visible='true'] .text-control {
-  border: 2px solid red;
-}
-
-input[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: red;
 }
 
 /**************** LightBox *********************/

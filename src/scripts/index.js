@@ -43,6 +43,7 @@ function displayTagsMenu (photographers) {
   for (const tag of tags) {
     const tags = document.createElement('span')
     tags.textContent = '#' + tag[0].toUpperCase() + tag.slice(1)
+    tags.className = 'ui_tags'
     tagsMenu.appendChild(tags)
   }
 }
@@ -54,7 +55,7 @@ function displayTagsMenu (photographers) {
  */
 
 function addListenersToTags (photographers) {
-  const tagsElts = document.querySelectorAll('.tags span')
+  const tagsElts = document.querySelectorAll('.ui_tags')
   tagsElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
       // Cible tag au clic et retourne ce même tag
@@ -105,9 +106,10 @@ function displayPhotographer (photographer) {
   el.querySelector('.tagline').textContent = photographer.tagline
   el.querySelector('.price').textContent = photographer.price + '€/jour'
 
-  const tags = el.querySelector('.tags')
+  const tags = el.querySelector('.tagsProfil')
   for (let i = 0; i < photographer.tags.length; i++) {
     const tag = document.createElement('span')
+    tag.className = 'ui_tags'
     tag.textContent = '#' + photographer.tags[i]
     tags.appendChild(tag)
   }

@@ -77,9 +77,10 @@ function profilTemplatePhotographer (photographer) {
     photographer.city + ', ' + photographer.country
   elt.querySelector('.tagline').textContent = photographer.tagline
 
-  const tags = elt.querySelector('.tags')
+  const tags = elt.querySelector('.tagsPhotographer')
   for (let i = 0; i < photographer.tags.length; i++) {
     const tag = document.createElement('span')
+    tag.className = 'ui_tags tagProfil'
     tag.textContent = '#' + photographer.tags[i]
     tags.appendChild(tag)
   }
@@ -110,7 +111,8 @@ function addMediaToPhotographProfil (photographers, medias) {
   function titleModalForm () {
     const buttonProfil = document.querySelector('.buttonProfil')
     const titleModal = document.querySelector('.title-modal')
-    titleModal.textContent = buttonProfil.textContent + '\n' + photographer.name
+    titleModal.textContent =
+      buttonProfil.textContent + '\n' + photographer.name
     console.log(titleModal.textContent)
   }
   titleModalForm()
@@ -146,21 +148,21 @@ function openModalImg () {
  */
 
 function dropDownMenu () {
-  const arrow = document.querySelector('.arrow')
-  const menuClassify = document.querySelector('.menu_classify')
+  const arrow = document.querySelector('#arrow_dropDownMenu')
+  const dropDownMenu = document.querySelector('#dropDownMenu')
   arrow.addEventListener('click', () => {
-    if (menuClassify.style.maxHeight === '40px') {
+    if (dropDownMenu.style.maxHeight === '40px') {
       arrow.style.transform = 'rotate(180deg)'
       arrow.style.transition = 'all 0.2s linear'
-      menuClassify.style.boxShadow = '0px 3px 3px 1px rgba(0,0,0,0.3)'
-      menuClassify.style.transition = 'max-height 0.2s linear'
-      menuClassify.style.maxHeight = '123px'
+      dropDownMenu.style.boxShadow = '0px 3px 3px 1px rgba(0,0,0,0.3)'
+      dropDownMenu.style.transition = 'max-height 0.2s linear'
+      dropDownMenu.style.maxHeight = '123px'
     } else {
       arrow.style.transform = 'rotate(0deg)'
       arrow.style.transition = 'all 0.2s linear'
-      menuClassify.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)'
-      menuClassify.style.transition = 'max-height 0.2s linear both'
-      menuClassify.style.maxHeight = '40px'
+      dropDownMenu.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)'
+      dropDownMenu.style.transition = 'max-height 0.2s linear'
+      dropDownMenu.style.maxHeight = '40px'
     }
   })
 }
@@ -313,7 +315,7 @@ function addFormValidation (form, formInputs) {
 
   // Écouter l'event submit du formulaire
   form.addEventListener('submit', function (e) {
-  // Annuler le comportement par défaut (envoi du formulaire)
+    // Annuler le comportement par défaut (envoi du formulaire)
     e.preventDefault()
 
     // Valider les inputs et compter le nombre d'erreurs
