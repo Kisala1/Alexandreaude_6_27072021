@@ -17,12 +17,11 @@ fetch('/data/fisheyeData.json')
     dropDownMenu()
     openModalImg()
     const modalForm = document.getElementById('modal_form')
-    // const modalImg = document.getElementById('modal_img') Valeur null en dehors
-    // de l'autre template
+    const modalImg = document.getElementById('modal_img')
     const buttonProfil = document.querySelector('.buttonProfil')
     const closeModalForm = document.querySelector('.close_modal-form')
     const closeModalImg = document.querySelector('.close_modal-img')
-    addModal(modalForm, buttonProfil, closeModalForm, closeModalImg)
+    addModal(modalForm, modalImg, buttonProfil, closeModalForm, closeModalImg)
 
     // Définition des inputs
     const form = document.querySelector('#form')
@@ -150,18 +149,12 @@ function dropDownMenu() {
   const arrow = document.querySelector('#arrow_dropDownMenu')
   const dropDownMenu = document.querySelector('#dropDownMenu')
   arrow.addEventListener('click', () => {
-    if (dropDownMenu.style.maxHeight === '40px') {
-      arrow.style.transform = 'rotate(180deg)'
-      arrow.style.transition = 'all 0.2s linear'
-      dropDownMenu.style.boxShadow = '0px 3px 3px 1px rgba(0,0,0,0.3)'
-      dropDownMenu.style.transition = 'max-height 0.2s linear'
-      dropDownMenu.style.maxHeight = '123px'
+    if (dropDownMenu.className === 'dropDownMenu') {
+      dropDownMenu.classList.add('dropDownMenu_active')
+      arrow.classList.add('arrow_dropDownMenu_active')
     } else {
-      arrow.style.transform = 'rotate(0deg)'
-      arrow.style.transition = 'all 0.2s linear'
-      dropDownMenu.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,0)'
-      dropDownMenu.style.transition = 'max-height 0.2s linear'
-      dropDownMenu.style.maxHeight = '40px'
+      dropDownMenu.classList.remove('dropDownMenu_active')
+      arrow.classList.remove('arrow_dropDownMenu_active')
     }
   })
 }
@@ -179,7 +172,7 @@ function dropDownMenu() {
  * @param {HTMLElement} crossModalTitle <i class="cross">
  */
 
-function addModal(modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
+function addModal(modalBg, modalImg, buttonProfil, closeBtnForm, closeBtnImg) {
   function launchModalForm() {
     modalBg.style.display = 'block'
   }
@@ -187,9 +180,9 @@ function addModal(modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
     modalBg.style.display = 'none'
   }
 
-  // function closeModalImg () {
-  //   modalImg.style.display = 'none'
-  // }
+  function closeModalImg() {
+    modalImg.style.display = 'none'
+  }
 
   // Ouvrir et fermer la modal form
 
@@ -203,13 +196,13 @@ function addModal(modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
 
   // Ouvrir et fermer la modal img
 
-  // modalImg.addEventListener('click', (e) => {
-  //   if (e.target === modalImg) {
-  //     closeModalImg()
-  //   }
-  // })
+  modalImg.addEventListener('click', (e) => {
+    if (e.target === modalImg) {
+      closeModalImg()
+    }
+  })
 
-  // closeBtnImg.addEventListener('click', closeModalImg)
+  closeBtnImg.addEventListener('click', closeModalImg)
 }
 
 // =========================================================

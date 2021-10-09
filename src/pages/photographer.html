@@ -51,7 +51,10 @@
             <ul id="dropDownMenu" class="dropDownMenu">
               <li class="popularity">
                 Popularité
-                <i id="arrow_dropDownMenu" class="arrow_dropDownMenu fas fa-chevron-down"></i>
+                <i
+                  id="arrow_dropDownMenu"
+                  class="arrow_dropDownMenu fas fa-chevron-down"
+                ></i>
               </li>
               <li class="date">Date</li>
               <li class="title">Titre</li>
@@ -59,91 +62,91 @@
           </nav>
         </div>
         <div class="container_img"></div>
-
-        <!------ Form ------>
-
-        <div id="modal_form" class="modal-mask modal_mask">
-          <div class="modal">
-            <div class="modal-title">
-              <h2 class="title-modal"></h2>
-              <i class="cross close_modal-form fas fa-times"></i>
-            </div>
-            <div class="modal-body">
-              <form
-                id="form"
-                class="form"
-                action="photographer.html"
-                method="GET"
-              >
-                <div class="formData">
-                  <label for="firstname">Prénom</label>
-                  <input
-                    class="text-control"
-                    type="text"
-                    name="firstname"
-                    id="firstname"
-                  />
-                </div>
-                <div class="formData">
-                  <label for="lastname">Nom</label>
-                  <input
-                    class="text-control"
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                  />
-                </div>
-                <div class="formData">
-                  <label for="email">Email</label>
-                  <input
-                    class="text-control"
-                    type="email"
-                    name="email"
-                    id="email"
-                  />
-                </div>
-                <div class="formData">
-                  <label for="message">Votre message</label>
-                  <input
-                    class="text-control"
-                    type="text"
-                    name="message"
-                    id="message"
-                  />
-                </div>
-                <input type="submit" value="Envoyer" id="btn_send" />
-              </form>
-              <div class="formSuccessMessage">
-                <p>
-                  Votre message a bien été envoyé. <br />
-                  <br />
-                  Notre photographe vous répondra dans les plus brefs délais.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!------ LightBox ------->
-
-        <div id="modal_img" class="modal-mask-img modal_mask">
-          <div class="modal-img">
-            <div class="close-modal-img">
-              <i class="cross close_modal-img fas fa-times"></i>
-            </div>
-            <figure class="figure-modal">
-              <div class="container">
-                <i class="arrow fas fa-chevron-left"></i>
-                <div class="container-img-modal">
-                  <img src="" alt="" class="img-modal" />
-                </div>
-                <i class="arrow fas fa-chevron-right"></i>
-              </div>
-              <figcaption class="modal-description">bla bla</figcaption>
-            </figure>
-          </div>
-        </div>
       </template>
+
+      <!------ Form ------>
+
+      <div id="modal_form" class="modal-mask modal_mask">
+        <div class="modal">
+          <div class="modal-title">
+            <h2 class="title-modal"></h2>
+            <i class="cross close_modal-form fas fa-times"></i>
+          </div>
+          <div class="modal-body">
+            <form
+              id="form"
+              class="form"
+              action="photographer.html"
+              method="GET"
+            >
+              <div class="formData">
+                <label for="firstname">Prénom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                />
+              </div>
+              <div class="formData">
+                <label for="lastname">Nom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                />
+              </div>
+              <div class="formData">
+                <label for="email">Email</label>
+                <input
+                  class="text-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                />
+              </div>
+              <div class="formData">
+                <label for="message">Votre message</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="message"
+                  id="message"
+                />
+              </div>
+              <input type="submit" value="Envoyer" id="btn_send" />
+            </form>
+            <div class="formSuccessMessage">
+              <p>
+                Votre message a bien été envoyé. <br />
+                <br />
+                Notre photographe vous répondra dans les plus brefs délais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!------ LightBox ------->
+
+      <div id="modal_img" class="modal-mask-img modal_mask">
+        <div class="modal-img">
+          <div class="close-modal-img">
+            <i class="cross close_modal-img fas fa-times"></i>
+          </div>
+          <figure class="figure-modal">
+            <div class="container">
+              <i class="arrow fas fa-chevron-left"></i>
+              <div class="container-img-modal">
+                <img src="" alt="" class="img-modal" />
+              </div>
+              <i class="arrow fas fa-chevron-right"></i>
+            </div>
+            <figcaption class="modal-description">bla bla</figcaption>
+          </figure>
+        </div>
+      </div>
     </main>
     <script type="module" src="../scripts/photographer.js"></script>
   </body>
