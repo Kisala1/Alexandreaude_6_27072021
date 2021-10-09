@@ -109,7 +109,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .arrow {
+  .arrow-left,
+  .arrow-right {
     margin: 20px;
     font-size: 3em;
     color: theme.$secondary-color;

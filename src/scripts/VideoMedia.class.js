@@ -1,5 +1,5 @@
 export default class VideoMedia {
-  constructor (media) {
+  constructor(media) {
     this.id = media.id
     this.photographerId = media.photographerId
     this.title = media.title
@@ -10,13 +10,16 @@ export default class VideoMedia {
     this.price = media.price
   }
 
-  displayInlist (container) {
+  displayInlist(container) {
     const figure = document.createElement('figure')
     const video = document.createElement('video')
     const source = document.createElement('source')
     source.src = '/data/' + this.photographerId + '/' + this.video
     video.controls = true
     video.className = 'media'
+    video.id = 'media-' + this.id
+    video.dataset.mediaId = this.id
+    video.dataset.date = this.date
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')

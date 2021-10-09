@@ -519,7 +519,8 @@ input[data-error]::after {
   justify-content: center;
   align-items: center;
 }
-.container .arrow {
+.container .arrow-left,
+.container .arrow-right {
   margin: 20px;
   font-size: 3em;
   color: #901c1c;

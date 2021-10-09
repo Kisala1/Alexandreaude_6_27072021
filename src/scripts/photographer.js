@@ -15,7 +15,6 @@ fetch('/data/fisheyeData.json')
   .then((data) => {
     addMediaToPhotographProfil(data.photographers, data.media)
     dropDownMenu()
-    openModalImg()
     const modalForm = document.getElementById('modal_form')
     const modalImg = document.getElementById('modal_img')
     const buttonProfil = document.querySelector('.buttonProfil')
@@ -122,22 +121,47 @@ function addMediaToPhotographProfil(photographers, medias) {
       media.displayInlist(container)
     }
   }
+
+  registerModalImg(mediaPhotographs)
 }
 
-function openModalImg() {
+function registerModalImg(mediaPhotographs) {
+  const mediaModal = document.querySelector('.img-modal')
+
+  function gotoNextMedia(step) {
+    const mediaId = parseInt(mediaModal.dataset.mediaId)
+    const mediaIndex = mediaPhotographs.indexOf(
+      mediaPhotographs.find((e) => e.id === mediaId)
+    )
+    let nextMediaIndex = mediaIndex + step
+    if (nextMediaIndex < 0) {
+      nextMediaIndex = mediaPhotographs.length - 1
+    } else if (nextMediaIndex >= mediaPhotographs.length) {
+      nextMediaIndex = 0
+    }
+    const nextMediaId = mediaPhotographs[nextMediaIndex].id
+    const nextMediaEl = document.getElementById('media-' + nextMediaId)
+    openModalImg(nextMediaEl)
+  }
+  const left = document.querySelector('.arrow-left')
+  const right = document.querySelector('.arrow-right')
+  left.addEventListener('click', () => gotoNextMedia(-1))
+  right.addEventListener('click', () => gotoNextMedia(1))
+
   const mediaElts = document.querySelectorAll('.media')
   mediaElts.forEach((elt) => {
-    elt.addEventListener('click', (e) => {
-      const media = e.target
-      const mediaSource = e.target.src
-
-      const modalImg = document.querySelector('.modal-mask-img')
-      const imgModal = document.querySelector('.img-modal')
-      modalImg.style.display = 'block'
-      imgModal.src = mediaSource
-      document.querySelector('.modal-description').textContent = media.alt
-    })
+    elt.addEventListener('click', (e) => openModalImg(e.target))
   })
+}
+
+function openModalImg(mediaEl) {
+  const mediaModal = document.querySelector('.img-modal')
+  mediaModal.dataset.mediaId = mediaEl.dataset.mediaId
+  mediaModal.src = mediaEl.src
+  document.querySelector('.modal-description').textContent = mediaEl.alt
+
+  const modalImg = document.querySelector('.modal-mask-img')
+  modalImg.style.display = 'block'
 }
 
 /**

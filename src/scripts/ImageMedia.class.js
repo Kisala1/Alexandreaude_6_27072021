@@ -1,21 +1,24 @@
 export default class ImageMedia {
-  constructor (media) {
+  constructor(media) {
     this.id = media.id
     this.photographerId = media.photographerId
     this.title = media.title
     this.image = media.image
     this.tags = media.tags
     this.likes = media.likes
-    this.dates = media.dates
+    this.date = media.date
     this.price = media.price
   }
 
-  displayInlist (container) {
+  displayInlist(container) {
     const figure = document.createElement('figure')
     const img = document.createElement('img')
     img.src = '/data/' + this.photographerId + '/' + this.image
     img.alt = this.title
     img.className = 'media'
+    img.id = 'media-' + this.id
+    img.dataset.mediaId = this.id
+    img.dataset.date = this.date
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')
