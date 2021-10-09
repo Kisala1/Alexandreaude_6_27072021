@@ -53,7 +53,7 @@ fetch('/data/fisheyeData.json')
 // Fonction modèle-type page de profil d'un photogrgaphe
 // =========================================================
 
-function profilTemplatePhotographer (photographer) {
+function profilTemplatePhotographer(photographer) {
   const profilPhotographerList = document.getElementById(
     'details_profil_photographer'
   )
@@ -97,7 +97,7 @@ function profilTemplatePhotographer (photographer) {
  * @param {Array} Array : data.medias
  */
 
-function addMediaToPhotographProfil (photographers, medias) {
+function addMediaToPhotographProfil(photographers, medias) {
   // find renvoie le 1er élement trouvé
   // Récupère l'id associé au photographe correspondant
   const photographer = photographers.find((elt) => elt.id === idPhotograph)
@@ -108,11 +108,10 @@ function addMediaToPhotographProfil (photographers, medias) {
     (elt) => elt.photographerId === idPhotograph
   )
 
-  function titleModalForm () {
+  function titleModalForm() {
     const buttonProfil = document.querySelector('.buttonProfil')
     const titleModal = document.querySelector('.title-modal')
-    titleModal.textContent =
-      buttonProfil.textContent + '\n' + photographer.name
+    titleModal.textContent = buttonProfil.textContent + '\n' + photographer.name
     console.log(titleModal.textContent)
   }
   titleModalForm()
@@ -126,7 +125,7 @@ function addMediaToPhotographProfil (photographers, medias) {
   }
 }
 
-function openModalImg () {
+function openModalImg() {
   const mediaElts = document.querySelectorAll('.media')
   mediaElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
@@ -147,7 +146,7 @@ function openModalImg () {
  *
  */
 
-function dropDownMenu () {
+function dropDownMenu() {
   const arrow = document.querySelector('#arrow_dropDownMenu')
   const dropDownMenu = document.querySelector('#dropDownMenu')
   arrow.addEventListener('click', () => {
@@ -180,11 +179,11 @@ function dropDownMenu () {
  * @param {HTMLElement} crossModalTitle <i class="cross">
  */
 
-function addModal (modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
-  function launchModalForm () {
+function addModal(modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
+  function launchModalForm() {
     modalBg.style.display = 'block'
   }
-  function closeModalForm () {
+  function closeModalForm() {
     modalBg.style.display = 'none'
   }
 
@@ -223,7 +222,7 @@ function addModal (modalBg, buttonProfil, closeBtnForm, closeBtnImg) {
  * @param {HTMLInputElement} input L'input
  * @returns {string} le message d'erreur; ou une string vide en cas de succès.
  */
-function validateName (input) {
+function validateName(input) {
   const value = input.value
   if (value.length < 2) {
     return 'Veuillez entrer 2 caractères ou plus.'
@@ -244,7 +243,7 @@ function validateName (input) {
  * @param {HTMLInputElement} input L'input
  * @returns {string} le message d'erreur; ou une string vide en cas de succès.
  */
-function validateEmail (input) {
+function validateEmail(input) {
   const value = input.value
   const emailRegExp = /^[^@]+@[^@]+\.[^@]+$/
 
@@ -254,7 +253,7 @@ function validateEmail (input) {
   return ''
 }
 
-function validateMessage (input) {
+function validateMessage(input) {
   const value = input.value
   if (value.length < 2) {
     return 'Veuillez entrer 2 caractères ou plus.'
@@ -274,7 +273,7 @@ function validateMessage (input) {
  *
  */
 
-function inputToArray (input) {
+function inputToArray(input) {
   if (input) {
     return [input]
   }
@@ -286,7 +285,7 @@ function inputToArray (input) {
  * @param {string} Message d'erreur ou une string vide
  */
 
-function setErrorMessage (input, error) {
+function setErrorMessage(input, error) {
   const formData = inputToArray(input)[0].closest('.formData')
   if (error) {
     formData.setAttribute('data-error', error)
@@ -303,7 +302,7 @@ function setErrorMessage (input, error) {
  * @param {Array} formInputs Array : input, validateFn
  */
 
-function addFormValidation (form, formInputs) {
+function addFormValidation(form, formInputs) {
   // Ajouter la validation dynamique pour chaque input
   for (const { input, validateFn } of formInputs) {
     inputToArray(input).forEach(function (i) {
@@ -336,7 +335,7 @@ function addFormValidation (form, formInputs) {
   })
 }
 
-function messageAppearance () {
+function messageAppearance() {
   document.querySelector('.title-modal').style.display = 'none'
   document.querySelector('.formSuccessMessage').style.display = 'block'
   const containerModalTitle = document.querySelector('.modal-title')
