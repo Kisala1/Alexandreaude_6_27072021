@@ -37,4 +37,23 @@ export default class VideoMedia {
     figcaption.appendChild(titleImage)
     figcaption.appendChild(likeImage)
   }
+
+  displayInLightbox(mediaEl) {
+    const idMedia = parseInt(mediaEl.dataset.mediaId)
+
+    const container = document.querySelector('.container-img-modal')
+    const mediaModal = document.createElement('video')
+    const mediaSourceModal = document.createElement('source')
+    console.log(mediaEl)
+    mediaModal.className = 'img-modal'
+    mediaModal.dataset.mediaId = idMedia
+    mediaSourceModal.src = mediaEl.querySelector('source').src
+    mediaModal.controls = mediaEl.controls
+    document.querySelector('.modal-description').textContent = mediaEl.title
+    container.innerHTML = ''
+    container.appendChild(mediaModal)
+    mediaModal.appendChild(mediaSourceModal)
+    const modalImg = document.querySelector('.modal-mask-img')
+    modalImg.style.display = 'block'
+  }
 }

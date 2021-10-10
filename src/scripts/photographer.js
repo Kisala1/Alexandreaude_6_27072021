@@ -126,9 +126,8 @@ function addMediaToPhotographProfil(photographers, medias) {
 }
 
 function registerModalImg(mediaPhotographs) {
-  const mediaModal = document.querySelector('.img-modal')
-
   function gotoNextMedia(step) {
+    const mediaModal = document.querySelector('.img-modal')
     const mediaId = parseInt(mediaModal.dataset.mediaId)
     const mediaIndex = mediaPhotographs.indexOf(
       mediaPhotographs.find((e) => e.id === mediaId)
@@ -141,7 +140,7 @@ function registerModalImg(mediaPhotographs) {
     }
     const nextMediaId = mediaPhotographs[nextMediaIndex].id
     const nextMediaEl = document.getElementById('media-' + nextMediaId)
-    openModalImg(nextMediaEl)
+    openModalImg(nextMediaEl, mediaPhotographs)
   }
   const left = document.querySelector('.arrow-left')
   const right = document.querySelector('.arrow-right')
@@ -150,18 +149,17 @@ function registerModalImg(mediaPhotographs) {
 
   const mediaElts = document.querySelectorAll('.media')
   mediaElts.forEach((elt) => {
-    elt.addEventListener('click', (e) => openModalImg(e.target))
+    elt.addEventListener('click', (e) =>
+      openModalImg(e.target, mediaPhotographs)
+    )
   })
 }
 
-function openModalImg(mediaEl) {
-  const mediaModal = document.querySelector('.img-modal')
-  mediaModal.dataset.mediaId = mediaEl.dataset.mediaId
-  mediaModal.src = mediaEl.src
-  document.querySelector('.modal-description').textContent = mediaEl.alt
-
-  const modalImg = document.querySelector('.modal-mask-img')
-  modalImg.style.display = 'block'
+function openModalImg(mediaEl, medias) {
+  const idMedia = parseInt(mediaEl.dataset.mediaId)
+  const media = medias.find((elt) => elt.id === idMedia)
+  const ligthboxMedia = factory(media)
+  ligthboxMedia.displayInLightbox(mediaEl)
 }
 
 /**
@@ -184,7 +182,7 @@ function dropDownMenu() {
 }
 
 // =========================================================
-// Modal
+// Modal Form
 // =========================================================
 
 /**

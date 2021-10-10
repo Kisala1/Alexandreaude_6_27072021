@@ -35,4 +35,20 @@ export default class ImageMedia {
     figcaption.appendChild(titleImage)
     figcaption.appendChild(likeImage)
   }
+
+  displayInLightbox(mediaEl) {
+    const idMedia = parseInt(mediaEl.dataset.mediaId)
+
+    const container = document.querySelector('.container-img-modal')
+    const mediaModal = document.createElement('img')
+    mediaModal.className = 'img-modal'
+    mediaModal.dataset.mediaId = idMedia
+    mediaModal.src = mediaEl.src
+    mediaModal.alt = mediaEl.alt
+    document.querySelector('.modal-description').textContent = mediaEl.alt
+    container.innerHTML = ''
+    container.appendChild(mediaModal)
+    const modalImg = document.querySelector('.modal-mask-img')
+    modalImg.style.display = 'block'
+  }
 }
