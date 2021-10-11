@@ -15,13 +15,8 @@ fetch('/data/fisheyeData.json')
   .then((data) => {
     addMediaToPhotographProfil(data.photographers, data.media)
     dropDownMenu()
-    const modalForm = document.getElementById('modal_form')
-    const modalImg = document.getElementById('modal_img')
-    const buttonProfil = document.querySelector('.buttonProfil')
-    const closeModalForm = document.querySelector('.close_modal-form')
-    const closeModalImg = document.querySelector('.close_modal-img')
-    addModal(modalForm, modalImg, buttonProfil, closeModalForm, closeModalImg)
-
+    addModalForm()
+    closeLightbox()
     // Définition des inputs
     const form = document.querySelector('#form')
     addFormValidation(form, [
@@ -125,6 +120,22 @@ function addMediaToPhotographProfil(photographers, medias) {
   registerModalImg(mediaPhotographs)
 }
 
+function closeLightbox() {
+  const modalImg = document.getElementById('modal_img')
+  const closeBtnImg = document.querySelector('.close_modal-img')
+
+  function closeModalImg() {
+    modalImg.style.display = 'none'
+  }
+  modalImg.addEventListener('click', (e) => {
+    if (e.target === modalImg) {
+      closeModalImg()
+    }
+  })
+
+  closeBtnImg.addEventListener('click', closeModalImg)
+}
+
 function registerModalImg(mediaPhotographs) {
   function gotoNextMedia(step) {
     const mediaModal = document.querySelector('.img-modal')
@@ -186,45 +197,33 @@ function dropDownMenu() {
 // =========================================================
 
 /**
- * Permet d'ouvrir et de fermer la modal
+ * Permet d'ouvrir et de fermer la modal form
  *
- * @param {HTMLDivElement} modalBg div modal_form
+ * @param {HTMLDivElement} modalForm div modal_form
  * @param {HTMLButtonElement} buttonProfil button class= "buttonProfil"
  * @param {HTMLButtonElement} sendButton button class= "btn_send"
  * @param {HTMLElement} crossModalTitle <i class="cross">
  */
 
-function addModal(modalBg, modalImg, buttonProfil, closeBtnForm, closeBtnImg) {
+function addModalForm() {
+  const modalForm = document.getElementById('modal_form')
+  const buttonProfil = document.querySelector('.buttonProfil')
+  const closeBtnForm = document.querySelector('.close_modal-form')
+
   function launchModalForm() {
-    modalBg.style.display = 'block'
+    modalForm.style.display = 'block'
   }
   function closeModalForm() {
-    modalBg.style.display = 'none'
+    modalForm.style.display = 'none'
   }
 
-  function closeModalImg() {
-    modalImg.style.display = 'none'
-  }
-
-  // Ouvrir et fermer la modal form
-
-  modalBg.addEventListener('click', (e) => {
-    if (e.target === modalBg) {
+  modalForm.addEventListener('click', (e) => {
+    if (e.target === modalForm) {
       closeModalForm()
     }
   })
   buttonProfil.addEventListener('click', launchModalForm)
   closeBtnForm.addEventListener('click', closeModalForm)
-
-  // Ouvrir et fermer la modal img
-
-  modalImg.addEventListener('click', (e) => {
-    if (e.target === modalImg) {
-      closeModalImg()
-    }
-  })
-
-  closeBtnImg.addEventListener('click', closeModalImg)
 }
 
 // =========================================================
