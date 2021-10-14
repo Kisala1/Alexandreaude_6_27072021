@@ -24,7 +24,7 @@ fetch('/data/fisheyeData.json')
  */
 
 //  Ajoute les tags dans le menu
-function displayTagsMenu (photographers) {
+function displayTagsMenu(photographers) {
   const tags = []
   for (const photographer of photographers) {
     for (const tag of photographer.tags) {
@@ -54,7 +54,7 @@ function displayTagsMenu (photographers) {
  * @param {Array} Array photographers
  */
 
-function addListenersToTags (photographers) {
+function addListenersToTags(photographers) {
   const tagsElts = document.querySelectorAll('.ui_tags')
   tagsElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
@@ -64,13 +64,15 @@ function addListenersToTags (photographers) {
 
       // Retourne un nouveau tableau avec tous les éléments
       // qui remplissent la condition déterminée par la fonction
-      const photographersWithTag = photographers.filter(elt => elt.tags.includes(tag))
+      const photographersWithTag = photographers.filter((elt) =>
+        elt.tags.includes(tag)
+      )
 
       // Créer un nouveau tableau avec les résultats de l'appel de la fonction
       // fournie sur chaque élément du tableau
-      const ids = photographersWithTag.map(elt => elt.id)
+      const ids = photographersWithTag.map((elt) => elt.id)
 
-      document.querySelectorAll('figure').forEach(photographer => {
+      document.querySelectorAll('figure').forEach((photographer) => {
         // Si le tableau ids contient l'Id du photographe (en nombre)
         if (ids.includes(parseInt(photographer.dataset.photographerId))) {
           photographer.style.display = 'block'
@@ -88,7 +90,7 @@ function addListenersToTags (photographers) {
  * @param {Array} Array photographer
  */
 
-function displayPhotographer (photographer) {
+function displayPhotographer(photographer) {
   const profilList = document.getElementById('profil_photographer')
   const profilElementTemplate = document.getElementById(
     'profil_photographer_element'
@@ -100,7 +102,8 @@ function displayPhotographer (photographer) {
   el.querySelector('figure').dataset.photographerId = photographer.id
   el.querySelector('a').href = 'photographer.html?id=' + photographer.id
   imgSelector.alt = photographer.name
-  imgSelector.src = '../../data/Photographers_ID_Photos/' + photographer.portrait
+  imgSelector.src =
+    '../../data/Photographers_ID_Photos/' + photographer.portrait
   el.querySelector('.lieu').textContent =
     photographer.city + ', ' + photographer.country
   el.querySelector('.tagline').textContent = photographer.tagline

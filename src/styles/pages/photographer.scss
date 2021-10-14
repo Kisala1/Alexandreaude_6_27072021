@@ -33,6 +33,7 @@
     font-size: 3em;
     button {
       @include mixins.effectButton;
+      white-space: nowrap;
       &:hover {
         background-color: lighten(theme.$bg-secondary-color, 15%);
         color: #000;

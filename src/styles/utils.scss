@@ -13,63 +13,63 @@
   overflow: auto;
   z-index: 9999;
   background: rgba(0, 0, 0, 0.4);
-}
-
-.modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  max-width: 400px;
-  margin: 20vh auto 20px;
-  padding: 20px;
-  background-color: lighten(theme.$bg-secondary-color, 15%);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
-.modal-title {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  h2 {
-    font-size: 2em;
-    font-weight: 500;
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    margin: 20vh auto 20px;
+    padding: 20px;
+    background-color: lighten(theme.$bg-secondary-color, 15%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    .modal-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      h2 {
+        font-size: 2em;
+        font-weight: 500;
+      }
+      .cross {
+        color: #fff;
+        font-size: 1.5em;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    }
   }
-  .cross {
-    color: #fff;
-    font-size: 1.5em;
-    margin-top: 10px;
+  .formData {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    .text-control {
+      padding: 5px;
+      margin-bottom: 10px;
+      min-height: 30px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      font-size: large;
+    }
+  }
+  #btn_send {
+    @include mixins.effectButton;
+    font-size: small;
+    align-self: flex-start;
+    width: 100px;
+    margin: 10px 10px 10px 0;
     cursor: pointer;
+    &:hover {
+      background-color: darken(theme.$bg-primary-color, 5%);
+    }
+    &:focus {
+      background-color: darken(theme.$bg-primary-color, 5%);
+    }
   }
 }
-.formData {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 
-  .text-control {
-    padding: 5px;
-    margin-bottom: 10px;
-    min-height: 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-size: large;
-  }
-}
-#btn_send {
-  @include mixins.effectButton;
-  font-size: small;
-  align-self: flex-start;
-  width: 100px;
-  margin: 10px 10px 10px 0;
-  cursor: pointer;
-  &:hover {
-    background-color: darken(theme.$bg-primary-color, 5%);
-  }
-  &:focus {
-    background-color: darken(theme.$bg-primary-color, 5%);
-  }
-}
 
 // Style modal image \\
 
@@ -83,52 +83,53 @@
   overflow: auto;
   z-index: 9999;
   background-color: #fff;
-}
-.modal-img {
-  width: 80%;
-  overflow: hidden;
-  margin: 5vh auto 20px;
-  padding: 0 20px;
-  background-color: #fff;
-}
-.close-modal-img {
-  display: flex;
-  justify-content: end;
-  .cross {
-    margin: 10px;
-    font-size: 3em;
-    color: theme.$secondary-color;
-    cursor: pointer;
+  .modal-img {
+    width: 80%;
+    overflow: hidden;
+    margin: 5vh auto 20px;
+    padding: 0 20px;
+    background-color: #fff;
+    .close-modal-img {
+      display: flex;
+      justify-content: end;
+      .cross {
+        margin: 10px;
+        font-size: 3em;
+        color: theme.$secondary-color;
+        cursor: pointer;
+      }
+    }
+    .figure-modal {
+      display: flex;
+      flex-direction: column;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .arrow-left,
+        .arrow-right {
+          margin: 20px;
+          font-size: 3em;
+          color: theme.$secondary-color;
+          cursor: pointer;
+        }
+        .container-img-modal {
+          width: 100%;
+          height: 600px;
+          overflow: hidden;
+          .img-modal {
+            box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      .modal-description {
+        margin: 10px 0 0 70px;
+        color: theme.$secondary-color;
+        font-size: 1.3em;
+      }
+    }
   }
-}
-.figure-modal {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .arrow-left,
-  .arrow-right {
-    margin: 20px;
-    font-size: 3em;
-    color: theme.$secondary-color;
-    cursor: pointer;
-  }
-}
-.container-img-modal {
-  width: 100%;
-  height: 600px;
-  .img-modal {
-    box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    width: 100%;
-    height: auto;
-  }
-}
-.modal-description {
-  margin: 10px 0 0 70px;
-  color: theme.$secondary-color;
-  font-size: 1.3em;
 }
