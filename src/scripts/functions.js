@@ -23,3 +23,26 @@ export function dropDownMenu() {
     }
   })
 }
+export function classifyMedia() {
+  const titleButton = document.querySelector('.title')
+  titleButton.addEventListener('click', () => {
+    function sortArrayTitle(a, b) {
+      return a.title.localeCompare(b.title, 'en', {
+        ignorePunctuation: true,
+        sensitivity: 'base'
+      })
+    }
+  })
+  const popularityButton = document.querySelector('.popularity')
+  popularityButton.addEventListener('click', () => {
+    function sortArrayTitle(a, b) {
+      return b.likes - a.likes
+    }
+  })
+  const dateButton = document.querySelector('.date')
+  dateButton.addEventListener('click', () => {
+    function sortArrayTitle(a, b) {
+      return parseInt(b.date.localeCompare(a.date, { ignorePunctuation: true }))
+    }
+  })
+}

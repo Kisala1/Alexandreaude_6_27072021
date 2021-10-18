@@ -1,5 +1,5 @@
 import factory from './MediaFactory.js'
-import { getPhotographerId, dropDownMenu } from './functions.js'
+import { getPhotographerId, dropDownMenu, classifyMedia } from './functions.js'
 import { addFormValidation, addModalForm } from './form.js'
 
 const idPhotograph = getPhotographerId()
@@ -105,7 +105,8 @@ function addMediaToPhotographProfil(photographers, medias) {
   function titleModalForm() {
     const buttonProfil = document.querySelector('.buttonProfil')
     const titleModal = document.querySelector('.title-modal')
-    titleModal.innerHTML = buttonProfil.textContent + '<br/>' + photographer.name
+    titleModal.innerHTML =
+      buttonProfil.textContent + '<br/>' + photographer.name
   }
   titleModalForm()
 
@@ -116,7 +117,7 @@ function addMediaToPhotographProfil(photographers, medias) {
       media.displayInlist(container)
     }
   }
-
+  classifyMedia()
   registerModalImg(mediaPhotographs)
 }
 

@@ -316,8 +316,7 @@ input[data-error]::after {
 .container_classify span {
   margin: 10px 0;
 }
-
-.classify_photos {
+.container_classify .classify_photos {
   margin-left: 10px;
 }
 

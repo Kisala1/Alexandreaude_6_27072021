@@ -22,7 +22,6 @@ export default class ImageMedia {
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')
-    titleImage.className = 'title_image' /* A ENLEVER SI NON UTILISE */
     titleImage.textContent = this.title
 
     const likeImage = document.createElement('span')
