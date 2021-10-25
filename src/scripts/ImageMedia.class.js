@@ -19,6 +19,8 @@ export default class ImageMedia {
     img.id = 'media-' + this.id
     img.dataset.mediaId = this.id
     img.dataset.date = this.date
+    img.setAttribute('tabindex', 0)
+    img.setAttribute('role', 'button')
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')
@@ -33,6 +35,8 @@ export default class ImageMedia {
     figure.appendChild(figcaption)
     figcaption.appendChild(titleImage)
     figcaption.appendChild(likeImage)
+
+    return img
   }
 
   displayInLightbox(mediaEl) {

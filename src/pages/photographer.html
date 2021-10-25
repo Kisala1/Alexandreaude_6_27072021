@@ -54,6 +54,8 @@
                 <i
                   id="arrow_dropDownMenu"
                   class="arrow_dropDownMenu fas fa-chevron-down"
+                  tabindex="0"
+                  role="button"
                 ></i>
               </li>
               <li class="date">Date</li>
@@ -61,6 +63,7 @@
             </ul>
           </nav>
         </div>
+
         <div class="container_img"></div>
       </template>
 
@@ -69,7 +72,10 @@
       <div id="modal_form" class="modal-mask modal_mask">
         <div class="modal">
           <div class="modal-title">
-            <h2 class="title-modal"></h2>
+            <h2>
+              <span class="title-modal"></span
+              ><span class="photograph-name"></span>
+            </h2>
             <i class="cross close_modal-form fas fa-times"></i>
           </div>
           <div class="modal-body">
@@ -86,6 +92,7 @@
                   type="text"
                   name="firstname"
                   id="firstname"
+                  aria-required="true"
                 />
               </div>
               <div class="formData">
@@ -95,6 +102,7 @@
                   type="text"
                   name="lastname"
                   id="lastname"
+                  aria-required="true"
                 />
               </div>
               <div class="formData">
@@ -104,6 +112,7 @@
                   type="email"
                   name="email"
                   id="email"
+                  aria-required="true"
                 />
               </div>
               <div class="formData">
@@ -113,6 +122,7 @@
                   type="text"
                   name="message"
                   id="message"
+                  aria-required="true"
                 />
               </div>
               <input type="submit" value="Envoyer" id="btn_send" />
@@ -132,14 +142,14 @@
 
       <div id="modal_img" class="modal-mask-img modal_mask">
         <div class="modal-img">
-          <div class="close-modal-img">
-            <i class="cross close_modal-img fas fa-times"></i>
-          </div>
           <figure class="figure-modal">
             <div class="container">
-              <i class="arrow-left fas fa-chevron-left"></i>
+              <i class="arrow-left fas fa-chevron-left" tabindex="0"></i>
               <div class="container-img-modal"></div>
-              <i class="arrow-right fas fa-chevron-right"></i>
+              <div class="close-modal-img">
+                <i class="cross close_modal-img fas fa-times" tabindex="0"></i>
+                <i class="arrow-right fas fa-chevron-right" tabindex="0"></i>
+              </div>
             </div>
             <figcaption class="modal-description"></figcaption>
           </figure>

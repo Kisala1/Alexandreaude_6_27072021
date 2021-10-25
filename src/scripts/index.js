@@ -42,6 +42,8 @@ function displayTagsMenu(photographers) {
   const tagsMenu = document.querySelector('.tagsMenu')
   for (const tag of tags) {
     const tags = document.createElement('span')
+    tags.setAttribute('tabindex', 0)
+    tags.setAttribute('role', 'button')
     tags.textContent = '#' + tag[0].toUpperCase() + tag.slice(1)
     tags.className = 'ui_tags'
     tagsMenu.appendChild(tags)

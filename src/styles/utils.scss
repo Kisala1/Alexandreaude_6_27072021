@@ -28,6 +28,8 @@
       justify-content: space-between;
       margin-bottom: 10px;
       h2 {
+        display: flex;
+        flex-direction: column;
         font-size: 2em;
         font-weight: 500;
       }
@@ -43,7 +45,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-  
+
     .text-control {
       padding: 5px;
       margin-bottom: 10px;
@@ -70,7 +72,6 @@
   }
 }
 
-
 // Style modal image \\
 
 .modal-mask-img {
@@ -89,16 +90,6 @@
     margin: 5vh auto 20px;
     padding: 0 20px;
     background-color: #fff;
-    .close-modal-img {
-      display: flex;
-      justify-content: end;
-      .cross {
-        margin: 10px;
-        font-size: 3em;
-        color: theme.$secondary-color;
-        cursor: pointer;
-      }
-    }
     .figure-modal {
       display: flex;
       flex-direction: column;
@@ -106,27 +97,37 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        max-width: 100%;
+        max-height: 80vh;
+        overflow: hidden;
+
+        .close-modal-img {
+          display: flex;
+          flex-direction: column;
+          align-self: start;
+        }
+        .cross,
         .arrow-left,
         .arrow-right {
-          margin: 20px;
+          margin: 10px;
           font-size: 3em;
           color: theme.$secondary-color;
           cursor: pointer;
         }
-        .container-img-modal {
+        .arrow-right {
+          position: absolute;
+          top: 37%;
+        }
+
+        .img-modal {
+          box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
+          border-radius: 3px;
           width: 100%;
-          height: 600px;
-          overflow: hidden;
-          .img-modal {
-            box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
-            border-radius: 3px;
-            width: 100%;
-            height: auto;
-          }
+          height: auto;
         }
       }
       .modal-description {
-        margin: 10px 0 0 70px;
+        margin: 10px 0 0 50px;
         color: theme.$secondary-color;
         font-size: 1.3em;
       }

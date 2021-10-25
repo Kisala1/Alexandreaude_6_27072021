@@ -1,4 +1,5 @@
 @use 'theme';
+@use 'mixins';
 
 *,
 *:before,
@@ -37,6 +38,7 @@ body {
   max-height: 40px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: max-height 0.2s linear;
+  z-index: 999;
   .arrow_dropDownMenu {
     transform: rotate(0deg);
     transition: all 0.2s linear;

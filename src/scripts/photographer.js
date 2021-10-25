@@ -1,5 +1,9 @@
 import factory from './MediaFactory.js'
-import { getPhotographerId, dropDownMenu, classifyMedia } from './functions.js'
+import {
+  getPhotographerId,
+  dropDownMenu,
+  registerClassifyMedia
+} from './functions.js'
 import { addFormValidation, addModalForm } from './form.js'
 
 const idPhotograph = getPhotographerId()
@@ -102,22 +106,32 @@ function addMediaToPhotographProfil(photographers, medias) {
     (elt) => elt.photographerId === idPhotograph
   )
 
-  function titleModalForm() {
-    const buttonProfil = document.querySelector('.buttonProfil')
-    const titleModal = document.querySelector('.title-modal')
-    titleModal.innerHTML =
-      buttonProfil.textContent + '<br/>' + photographer.name
-  }
-  titleModalForm()
+  const buttonProfil = document.querySelector('.buttonProfil')
+  const titleModal = document.querySelector('.title-modal')
+  const photographName = document.querySelector('.photograph-name')
+  titleModal.textContent = buttonProfil.textContent
+  photographName.textContent = photographer.name
 
   const container = document.querySelector('.container_img')
-  for (const mediaPhotograph of mediaPhotographs) {
-    const media = factory(mediaPhotograph)
-    if (media !== undefined) {
-      media.displayInlist(container)
+  const createMedias = (mapper) => {
+    const mappedMediaPhotographs = mapper
+      ? mapper(mediaPhotographs)
+      : mediaPhotographs
+    container.innerHTML = ''
+    for (const mediaPhotograph of mappedMediaPhotographs) {
+      const media = factory(mediaPhotograph)
+      if (media !== undefined) {
+        media
+          .displayInlist(container)
+          .addEventListener('click', (e) =>
+            openModalImg(e.target, mediaPhotographs)
+          )
+      }
     }
   }
-  classifyMedia()
+  createMedias()
+
+  registerClassifyMedia({ createMedias })
   registerModalImg(mediaPhotographs)
 }
 
@@ -125,7 +139,7 @@ function closeLightbox() {
   const modalImg = document.getElementById('modal_img')
   const closeBtnImg = document.querySelector('.close_modal-img')
 
-  function closeModalImg() {
+  const closeModalImg = () => {
     modalImg.style.display = 'none'
   }
   modalImg.addEventListener('click', (e) => {
@@ -158,13 +172,6 @@ function registerModalImg(mediaPhotographs) {
   const right = document.querySelector('.arrow-right')
   left.addEventListener('click', () => gotoNextMedia(-1))
   right.addEventListener('click', () => gotoNextMedia(1))
-
-  const mediaElts = document.querySelectorAll('.media')
-  mediaElts.forEach((elt) => {
-    elt.addEventListener('click', (e) =>
-      openModalImg(e.target, mediaPhotographs)
-    )
-  })
 }
 
 function openModalImg(mediaEl, medias) {

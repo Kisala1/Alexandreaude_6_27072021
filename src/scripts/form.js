@@ -168,7 +168,7 @@ function getValidateFunction(name) {
       return validateName
     case 'validateEmail':
       return validateEmail
-    case 'valdateMessage':
+    case 'validateMessage':
       return validateMessage
   }
 }

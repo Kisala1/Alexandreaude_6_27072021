@@ -36,6 +36,8 @@ export default class VideoMedia {
     figure.appendChild(figcaption)
     figcaption.appendChild(titleImage)
     figcaption.appendChild(likeImage)
+
+    return video
   }
 
   displayInLightbox(mediaEl) {
@@ -44,7 +46,6 @@ export default class VideoMedia {
     const container = document.querySelector('.container-img-modal')
     const mediaModal = document.createElement('video')
     const mediaSourceModal = document.createElement('source')
-    console.log(mediaEl)
     mediaModal.className = 'img-modal'
     mediaModal.dataset.mediaId = idMedia
     mediaSourceModal.src = mediaEl.querySelector('source').src
