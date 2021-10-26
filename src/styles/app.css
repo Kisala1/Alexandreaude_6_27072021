@@ -393,6 +393,10 @@ input[data-error]::after {
     display: none;
   }
 
+  .container_classify {
+    display: none;
+  }
+
   .container_img {
     grid-template-columns: 1fr;
   }
@@ -503,7 +507,7 @@ input[data-error]::after {
   max-height: 80vh;
   overflow: hidden;
 }
-.modal-mask-img .modal-img .figure-modal .container .close-modal-img {
+.modal-mask-img .modal-img .figure-modal .container .container-interface {
   display: flex;
   flex-direction: column;
   align-self: start;
