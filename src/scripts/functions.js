@@ -11,13 +11,23 @@ export function getPhotographerId() {
  */
 
 export function dropDownMenu() {
-  const arrow = document.querySelector('#arrow_dropDownMenu')
   const dropDownMenu = document.querySelector('#dropDownMenu')
-  arrow.addEventListener('click', () => {
+  const arrow = document.querySelector('#arrow_dropDownMenu')
+  dropDownMenu.addEventListener('click', (e) => {
     if (dropDownMenu.className === 'dropDownMenu') {
       dropDownMenu.classList.add('dropDownMenu_active')
       arrow.classList.add('arrow_dropDownMenu_active')
     } else {
+      const arrowSymbol = `<i
+      id="arrow_dropDownMenu"
+      class="arrow_dropDownMenu fas fa-chevron-down"
+      tabindex="0"
+      role="button"
+      ></i>`
+
+      dropDownMenu.querySelector('#arrow_dropDownMenu').remove()
+      dropDownMenu.insertBefore(e.target, dropDownMenu.firstChild)
+      dropDownMenu.firstChild.innerHTML += arrowSymbol
       dropDownMenu.classList.remove('dropDownMenu_active')
       arrow.classList.remove('arrow_dropDownMenu_active')
     }

@@ -46,6 +46,8 @@ body {
     cursor: pointer;
   }
   li {
+    display: flex;
+    justify-content: space-between;
       background-color: theme.$secondary-color;
       color: #fff;
       padding: 10px;

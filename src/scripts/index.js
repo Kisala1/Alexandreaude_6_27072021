@@ -12,7 +12,7 @@ fetch('/data/fisheyeData.json')
       displayPhotographer(photographer)
     }
     displayTagsMenu(data.photographers)
-    addListenersToTags(data.photographers)
+    addListenersToKeyboardAndTags(data.photographers)
   })
   .catch((error) => {
     console.error(error)
@@ -56,33 +56,47 @@ function displayTagsMenu(photographers) {
  * @param {Array} Array photographers
  */
 
-function addListenersToTags(photographers) {
+function addListenersToKeyboardAndTags(photographers) {
+  document.addEventListener('keyup', (e) => {
+    if (
+      e.key === 'Enter' &&
+      document.activeElement.classList.contains('ui_tags')
+    ) {
+      const tagElt = document.activeElement
+      registerFilterWithTags(tagElt, photographers)
+    }
+  })
+
   const tagsElts = document.querySelectorAll('.ui_tags')
   tagsElts.forEach((elt) => {
     elt.addEventListener('click', (e) => {
-      // Cible tag au clic et retourne ce même tag
-      // sans ' # ' et sans majuscule
-      const tag = e.target.textContent.slice(1).toLowerCase()
-
-      // Retourne un nouveau tableau avec tous les éléments
-      // qui remplissent la condition déterminée par la fonction
-      const photographersWithTag = photographers.filter((elt) =>
-        elt.tags.includes(tag)
-      )
-
-      // Créer un nouveau tableau avec les résultats de l'appel de la fonction
-      // fournie sur chaque élément du tableau
-      const ids = photographersWithTag.map((elt) => elt.id)
-
-      document.querySelectorAll('figure').forEach((photographer) => {
-        // Si le tableau ids contient l'Id du photographe (en nombre)
-        if (ids.includes(parseInt(photographer.dataset.photographerId))) {
-          photographer.style.display = 'block'
-        } else {
-          photographer.style.display = 'none'
-        }
-      })
+      const target = e.target
+      registerFilterWithTags(target, photographers)
     })
+  })
+}
+function registerFilterWithTags(target, photographers) {
+  // Cible tag au clic et retourne ce même tag
+  // sans ' # ' et sans majuscule
+  const tag = target.textContent.slice(1).toLowerCase()
+
+  // Retourne un nouveau tableau avec tous les éléments
+  // qui remplissent la condition déterminée par la fonction
+  const photographersWithTag = photographers.filter((elt) =>
+    elt.tags.includes(tag)
+  )
+
+  // Créer un nouveau tableau avec les résultats de l'appel de la fonction
+  // fournie sur chaque élément du tableau
+  const ids = photographersWithTag.map((elt) => elt.id)
+
+  document.querySelectorAll('figure').forEach((photographer) => {
+    // Si le tableau ids contient l'Id du photographe (en nombre)
+    if (ids.includes(parseInt(photographer.dataset.photographerId))) {
+      photographer.style.display = 'block'
+    } else {
+      photographer.style.display = 'none'
+    }
   })
 }
 

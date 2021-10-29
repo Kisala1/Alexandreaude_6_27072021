@@ -12,19 +12,36 @@
  */
 
 export function addModalForm() {
-  const modalForm = document.getElementById('modal_form')
+  const mainWrapper = document.querySelector(
+    '#main-wrapper'
+  )
+  const body = document.querySelector('.body_photographer')
+  const modalForm = document.querySelector('#modal_form')
   const buttonProfil = document.querySelector('.buttonProfil')
   const closeBtnForm = document.querySelector('.close_modal-form')
 
+  const onOpenModal = () => {
+    mainWrapper.setAttribute('aria-hidden', 'true')
+    modalForm.setAttribute('aria-hidden', 'false')
+    body.style.overflow = 'hidden'
+  }
+  const onCloseModal = () => {
+    mainWrapper.setAttribute('aria-hidden', 'false')
+    modalForm.setAttribute('aria-hidden', 'true')
+    body.style.overflow = 'auto'
+  }
   function launchModalForm() {
     modalForm.style.display = 'block'
+    onOpenModal()
   }
   function closeModalForm() {
     modalForm.style.display = 'none'
+    onCloseModal()
   }
 
   modalForm.addEventListener('click', (e) => {
     if (e.target === modalForm) {
+      onCloseModal()
       closeModalForm()
     }
   })

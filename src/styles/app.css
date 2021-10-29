@@ -44,6 +44,8 @@ body {
   cursor: pointer;
 }
 .dropDownMenu li {
+  display: flex;
+  justify-content: space-between;
   background-color: #901c1c;
   color: #fff;
   padding: 10px;
