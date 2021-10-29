@@ -12,36 +12,34 @@
  */
 
 export function addModalForm() {
-  const mainWrapper = document.querySelector(
-    '#main-wrapper'
-  )
+  const mainWrapper = document.querySelector('#main-wrapper')
   const body = document.querySelector('.body_photographer')
   const modalForm = document.querySelector('#modal_form')
   const buttonProfil = document.querySelector('.buttonProfil')
   const closeBtnForm = document.querySelector('.close_modal-form')
 
-  const onOpenModal = () => {
+  function launchModalForm() {
     mainWrapper.setAttribute('aria-hidden', 'true')
     modalForm.setAttribute('aria-hidden', 'false')
     body.style.overflow = 'hidden'
+    modalForm.style.display = 'block'
+    closeBtnForm.focus()
   }
-  const onCloseModal = () => {
+  function closeModalForm() {
     mainWrapper.setAttribute('aria-hidden', 'false')
     modalForm.setAttribute('aria-hidden', 'true')
     body.style.overflow = 'auto'
-  }
-  function launchModalForm() {
-    modalForm.style.display = 'block'
-    onOpenModal()
-  }
-  function closeModalForm() {
     modalForm.style.display = 'none'
-    onCloseModal()
   }
+
+  document.addEventListener('keydown', (e) => {
+    if (modalForm.getAttribute('aria-hidden') === false && e.key === 'Escape') {
+      closeModalForm()
+    }
+  })
 
   modalForm.addEventListener('click', (e) => {
     if (e.target === modalForm) {
-      onCloseModal()
       closeModalForm()
     }
   })

@@ -46,6 +46,7 @@ body {
 .dropDownMenu li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #901c1c;
   color: #fff;
   padding: 10px;
