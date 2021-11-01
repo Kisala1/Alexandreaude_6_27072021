@@ -24,7 +24,9 @@ export function addModalForm() {
     body.style.overflow = 'hidden'
     modalForm.style.display = 'block'
     closeBtnForm.focus()
+    trapModal(modalForm)
   }
+
   function closeModalForm() {
     mainWrapper.setAttribute('aria-hidden', 'false')
     modalForm.setAttribute('aria-hidden', 'true')
@@ -33,7 +35,7 @@ export function addModalForm() {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (modalForm.getAttribute('aria-hidden') === false && e.key === 'Escape') {
+    if (e.key === 'Escape') {
       closeModalForm()
     }
   })
@@ -47,6 +49,39 @@ export function addModalForm() {
   closeBtnForm.addEventListener('click', closeModalForm)
 }
 
+export function trapModal(modalForm) {
+  /* Source : https://codepen.io/myogeshchavan97/pen/zYGVbxN?editors=0010 */
+
+  const focusableElements =
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+
+  const focusableContent = modalForm.querySelectorAll(focusableElements)
+  const firstFocusableElement = modalForm.querySelectorAll(focusableElements)[0]
+  const lastFocusableElement = focusableContent[focusableContent.length - 1]
+
+  document.addEventListener('keydown', function (e) {
+    const isTabPressed = e.key === 'Tab' || e.keyCode === 9
+    if (!isTabPressed) {
+      return
+    }
+
+    if (e.shiftKey) {
+      // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus() // add focus for the last focusable element
+        e.preventDefault()
+      }
+    } else {
+      // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) {
+        // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus() // add focus for the first focusable element
+        e.preventDefault()
+      }
+    }
+  })
+  firstFocusableElement.focus()
+}
 // =========================================================
 // Fonctions de validation
 // =========================================================

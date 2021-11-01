@@ -49,13 +49,11 @@
           <span>Trier par </span>
           <nav class="classify_photos">
             <ul id="dropDownMenu" class="dropDownMenu">
-              <li class="popularity">
+              <li class="popularity" tabindex="0" role="button">
                 Popularité
                 <i
                   id="arrow_dropDownMenu"
                   class="arrow_dropDownMenu fas fa-chevron-down"
-                  tabindex="0"
-                  role="button"
                 ></i>
               </li>
               <li class="date">Date</li>
@@ -83,7 +81,8 @@
             <span class="title-modal"></span
             ><span class="photograph-name"></span>
           </h2>
-          <i class="cross close_modal-form fas fa-times"></i>
+          <i class="cross close_modal-form fas fa-times" 
+          tabindex="0" role="button"></i>
         </div>
         <div class="modal-body">
           <form id="form" class="form" action="photographer.html" method="GET">
@@ -142,19 +141,15 @@
 
     <!------ LightBox ------->
 
-    <div
-      id="modal_img"
-      class="modal-mask-img modal_mask"
-      role="dialog"
-    >
+    <div id="modal_img" class="modal-mask-img modal_mask" role="dialog">
       <div class="modal-img">
         <figure class="figure-modal">
           <div class="container">
-            <i class="arrow-left fas fa-chevron-left" tabindex="0"></i>
+            <i class="arrow-left fas fa-chevron-left" tabindex="0" role="button"></i>
             <div class="container-img-modal"></div>
             <div class="container-interface">
-              <i class="cross close_modal-img fas fa-times" tabindex="0"></i>
-              <i class="arrow-right fas fa-chevron-right" tabindex="0"></i>
+              <i class="cross close_modal-img fas fa-times" tabindex="0" role="button"></i>
+              <i class="arrow-right fas fa-chevron-right" tabindex="0" role="button"></i>
             </div>
           </div>
           <figcaption class="modal-description"></figcaption>

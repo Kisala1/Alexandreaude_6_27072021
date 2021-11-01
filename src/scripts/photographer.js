@@ -172,6 +172,16 @@ function registerModalImg(mediaPhotographs) {
   const right = document.querySelector('.arrow-right')
   left.addEventListener('click', () => gotoNextMedia(-1))
   right.addEventListener('click', () => gotoNextMedia(1))
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') {
+      gotoNextMedia(-1)
+      left.focus()
+    }
+    if (e.key === 'ArrowRight') {
+      gotoNextMedia(1)
+      right.focus()
+    }
+  })
 }
 
 function openModalImg(mediaEl, medias) {

@@ -13,6 +13,9 @@ export function getPhotographerId() {
 export function dropDownMenu() {
   const dropDownMenu = document.querySelector('#dropDownMenu')
   const arrow = document.querySelector('#arrow_dropDownMenu')
+  // document.addEventListener('keyup', e => {
+  //   if (e.key === 'Enter')
+  // })
   dropDownMenu.addEventListener('click', (e) => {
     if (dropDownMenu.className === 'dropDownMenu') {
       dropDownMenu.classList.add('dropDownMenu_active')
