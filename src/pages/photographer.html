@@ -82,7 +82,7 @@
             ><span class="photograph-name"></span>
           </h2>
           <i class="cross close_modal-form fas fa-times" 
-          tabindex="0" role="button"></i>
+          tabindex="0" role="button" aria-label="Fermer fenêtre"></i>
         </div>
         <div class="modal-body">
           <form id="form" class="form" action="photographer.html" method="GET">
@@ -94,6 +94,7 @@
                 name="firstname"
                 id="firstname"
                 aria-required="true"
+                aria-label="Prénom"
               />
             </div>
             <div class="formData">
@@ -104,6 +105,7 @@
                 name="lastname"
                 id="lastname"
                 aria-required="true"
+                aria-label="Nom"
               />
             </div>
             <div class="formData">
@@ -114,6 +116,7 @@
                 name="email"
                 id="email"
                 aria-required="true"
+                aria-label="Email"
               />
             </div>
             <div class="formData">
@@ -124,9 +127,10 @@
                 name="message"
                 id="message"
                 aria-required="true"
+                aria-label="Message"
               />
             </div>
-            <input type="submit" value="Envoyer" id="btn_send" />
+            <input type="submit" value="Envoyer" id="btn_send" aria-label="Envoyer" />
           </form>
           <div class="formSuccessMessage">
             <p>
@@ -145,11 +149,11 @@
       <div class="modal-img">
         <figure class="figure-modal">
           <div class="container">
-            <i class="arrow-left fas fa-chevron-left" tabindex="0" role="button"></i>
+            <i class="arrow-left fas fa-chevron-left" tabindex="0" role="button" aria-label="Gauche"></i>
             <div class="container-img-modal"></div>
             <div class="container-interface">
-              <i class="cross close_modal-img fas fa-times" tabindex="0" role="button"></i>
-              <i class="arrow-right fas fa-chevron-right" tabindex="0" role="button"></i>
+              <i class="cross close_modal-img fas fa-times" tabindex="0" role="button" aria-label="Fermer fenêtre"></i>
+              <i class="arrow-right fas fa-chevron-right" tabindex="0" role="button" aria-label="Droite"></i>
             </div>
           </div>
           <figcaption class="modal-description"></figcaption>
