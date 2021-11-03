@@ -65,10 +65,11 @@ function profilTemplatePhotographer(photographer) {
   const imgProfil = elt.querySelector('.portrait')
   const button = document.createElement('button')
   const name = elt.querySelector('.name')
-
+  document.title += ` ${photographer.name}` /* + ' ' + photographer.name */
   name.textContent = photographer.name
   button.textContent = 'Contactez-moi'
   button.className = 'buttonProfil'
+  button.setAttribute('aria-label', 'Contactez-moi')
   imgProfil.src = '/data/Photographers_ID_Photos/' + photographer.portrait
   imgProfil.alt = photographer.name
   elt.querySelector('.lieu').textContent =
@@ -172,7 +173,7 @@ function registerModalImg(mediaPhotographs) {
   const right = document.querySelector('.arrow-right')
   left.addEventListener('click', () => gotoNextMedia(-1))
   right.addEventListener('click', () => gotoNextMedia(1))
-  document.addEventListener('keydown', e => {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       gotoNextMedia(-1)
       left.focus()

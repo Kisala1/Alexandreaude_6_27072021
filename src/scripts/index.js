@@ -44,6 +44,7 @@ function displayTagsMenu(photographers) {
     const tags = document.createElement('span')
     tags.setAttribute('tabindex', 0)
     tags.setAttribute('role', 'button')
+    tags.setAttribute('aria-label', tag)
     tags.textContent = '#' + tag[0].toUpperCase() + tag.slice(1)
     tags.className = 'ui_tags'
     tagsMenu.appendChild(tags)
@@ -117,6 +118,7 @@ function displayPhotographer(photographer) {
   el.querySelector('.name').textContent = photographer.name
   el.querySelector('figure').dataset.photographerId = photographer.id
   el.querySelector('a').href = 'photographer.html?id=' + photographer.id
+  el.querySelector('a').setAttribute('aria-label', 'Profil photographe')
   imgSelector.alt = photographer.name
   imgSelector.src =
     '../../data/Photographers_ID_Photos/' + photographer.portrait

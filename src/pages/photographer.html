@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>FishEye_Mimi Keel</title>
+    <title>Page Photographe</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="../styles/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
   <body class="body_photographer">
     <header class="header_photographer">
       <a href="../pages/index.html">
-        <img src="../image/Logo_Ficheye.png" alt="Fisheye Home page" />
+        <img src="../image/Logo_Ficheye.png" alt="Fisheye Home page" aria-label="Logo FishEye"/>
       </a>
     </header>
 
@@ -49,15 +49,15 @@
           <span>Trier par </span>
           <nav class="classify_photos">
             <ul id="dropDownMenu" class="dropDownMenu">
-              <li class="popularity" tabindex="0" role="button">
+              <li class="popularity" tabindex="0" role="button" aria-label="Filtrer par popularité">
                 Popularité
                 <i
                   id="arrow_dropDownMenu"
                   class="arrow_dropDownMenu fas fa-chevron-down"
                 ></i>
               </li>
-              <li class="date">Date</li>
-              <li class="title">Titre</li>
+              <li class="date" tabindex="0" role="button" aria-label="Filtrer par date">Date</li>
+              <li class="title" tabindex="0" role="button" aria-label="Filtrer par titre">Titre</li>
             </ul>
           </nav>
         </div>
