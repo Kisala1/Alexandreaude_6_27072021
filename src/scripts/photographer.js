@@ -148,7 +148,17 @@ function closeLightbox() {
       closeModalImg()
     }
   })
+  modalImg.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      modalImg.style.display = 'none'
+    }
+  })
 
+  closeBtnImg.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      closeModalImg()
+    }
+  })
   closeBtnImg.addEventListener('click', closeModalImg)
 }
 
@@ -179,6 +189,18 @@ function registerModalImg(mediaPhotographs) {
       left.focus()
     }
     if (e.key === 'ArrowRight') {
+      gotoNextMedia(1)
+      right.focus()
+    }
+  })
+  left.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      gotoNextMedia(-1)
+      left.focus()
+    }
+  })
+  right.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
       gotoNextMedia(1)
       right.focus()
     }

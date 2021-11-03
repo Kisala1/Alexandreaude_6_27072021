@@ -1,4 +1,5 @@
 import { trapModal } from './form.js'
+
 export default class VideoMedia {
   constructor(media) {
     this.id = media.id
@@ -58,12 +59,7 @@ export default class VideoMedia {
     mediaModal.appendChild(mediaSourceModal)
     const modalImg = document.querySelector('.modal-mask-img')
     modalImg.style.display = 'block'
-    trapModal(modalImg)
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        modalImg.style.display = 'none'
-      }
-    })
+    trapModal(modalImg)
   }
 }
