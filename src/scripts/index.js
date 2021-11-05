@@ -115,23 +115,36 @@ function displayPhotographer(photographer) {
   const el = document.importNode(profilElementTemplate.content, true)
   const imgSelector = el.querySelector('.portrait')
 
-  el.querySelector('.name').textContent = photographer.name
   el.querySelector('figure').dataset.photographerId = photographer.id
   el.querySelector('a').href = 'photographer.html?id=' + photographer.id
   el.querySelector('a').setAttribute('aria-label', 'Profil photographe')
+
+  const name = el.querySelector('.name')
+  name.textContent = photographer.name
+  name.setAttribute('aria-label', name.textContent)
+
   imgSelector.alt = photographer.name
   imgSelector.src =
     '../../data/Photographers_ID_Photos/' + photographer.portrait
-  el.querySelector('.lieu').textContent =
-    photographer.city + ', ' + photographer.country
-  el.querySelector('.tagline').textContent = photographer.tagline
-  el.querySelector('.price').textContent = photographer.price + '€/jour'
+
+  const lieu = el.querySelector('.lieu')
+  lieu.textContent = photographer.city + ', ' + photographer.country
+  lieu.setAttribute('aria-label', lieu.textContent)
+
+  const tagline = el.querySelector('.tagline')
+  tagline.textContent = photographer.tagline
+  tagline.setAttribute('aria-label', tagline.textContent)
+
+  const price = el.querySelector('.price')
+  price.textContent = photographer.price + '€/jour'
+  price.setAttribute('aria-label', price.textContent)
 
   const tags = el.querySelector('.tagsProfil')
   for (let i = 0; i < photographer.tags.length; i++) {
     const tag = document.createElement('span')
     tag.className = 'ui_tags'
     tag.textContent = '#' + photographer.tags[i]
+    tag.setAttribute('aria-label', photographer.tags[i])
     tags.appendChild(tag)
   }
   profilList.appendChild(el)

@@ -51,6 +51,7 @@ export default class ImageMedia {
     mediaModal.dataset.mediaId = idMedia
     mediaModal.src = mediaEl.src
     mediaModal.alt = mediaEl.alt
+    mediaModal.setAttribute('aria-label', this.title)
     document.querySelector('.modal-description').textContent = mediaEl.alt
     container.innerHTML = ''
     container.appendChild(mediaModal)

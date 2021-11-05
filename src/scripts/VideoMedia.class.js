@@ -53,6 +53,7 @@ export default class VideoMedia {
     mediaModal.dataset.mediaId = idMedia
     mediaSourceModal.src = mediaEl.querySelector('source').src
     mediaModal.controls = mediaEl.controls
+    mediaModal.setAttribute('aria-label', this.title)
     document.querySelector('.modal-description').textContent = mediaEl.title
     container.innerHTML = ''
     container.appendChild(mediaModal)

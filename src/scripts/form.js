@@ -207,7 +207,10 @@ export function addFormValidation(form, formInputs) {
 
 function messageAppearance() {
   document.querySelector('.title-modal').style.display = 'none'
-  document.querySelector('.formSuccessMessage').style.display = 'block'
+  document.querySelector('.photograph-name').style.display = 'none'
+  const successMessage = document.querySelector('.formSuccessMessage')
+  successMessage.style.display = 'block'
+  successMessage.setAttribute('aria-label', successMessage.textContent)
   const containerModalTitle = document.querySelector('.modal-title')
   containerModalTitle.style.justifyContent = 'end'
 }
