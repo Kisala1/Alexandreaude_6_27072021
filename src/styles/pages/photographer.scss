@@ -59,7 +59,7 @@
   .container_img-portrait {
     align-self: center;
     justify-self: right;
-    width: 55%;
+    width: 350px;
     .portrait {
       clip-path: circle(25%);
       box-shadow: 10px 5px 5px #000;
@@ -157,6 +157,10 @@
         font-size: 0.4em;
         font-weight: 500;
       }
+    }
+    .container_img-portrait {
+      align-self: end;
+      width: 240px
     }
   }
   .details {

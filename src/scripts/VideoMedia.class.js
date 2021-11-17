@@ -13,7 +13,7 @@ export default class VideoMedia {
   }
 
   /**
-   * Fonction pour créer une figure avec tous les détails pour une vidéo
+   * Méthode pour créer une figure avec tous les détails pour une vidéo
    * @param {HTMLElement} container : div class container_img
    * @returns
    */
@@ -21,7 +21,7 @@ export default class VideoMedia {
     const figure = document.createElement('figure')
     const video = document.createElement('video')
     const source = document.createElement('source')
-    source.src = '/data/' + this.photographerId + '/' + this.video
+    source.src = './../../data/' + this.photographerId + '/' + this.video
     video.controls = true
     video.className = 'media'
     video.id = 'media-' + this.id
@@ -39,16 +39,15 @@ export default class VideoMedia {
     likeMedia.setAttribute('aria-label', "Ajouter un j'aime à l'image")
     const heartSymbol =
       '<i class="fas fa-heart" tabindex="0" role="button" aria-label="Ajouter un j\'aime à l\'image"></i>'
-    let likes = this.likes
     likeMedia.className = 'like_media'
-    likeMedia.innerHTML = likes + ' ' + heartSymbol
+    likeMedia.innerHTML = this.likes + ' ' + heartSymbol
 
     likeMedia.addEventListener('click', () => {
-      likeMedia.innerHTML = likes++ + ' ' + heartSymbol
+      this.like(likeMedia, heartSymbol)
     })
     likeMedia.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        likeMedia.innerHTML = likes++ + ' ' + heartSymbol
+        this.like(likeMedia, heartSymbol)
       }
     })
 
@@ -63,7 +62,28 @@ export default class VideoMedia {
   }
 
   /**
-   * Fonction pour faire apparaître le media agrandi
+   * Méthode pour ajouter / retirer un like sur une vidéo
+   * @param {HTMLElement} likeMedia : span
+   * @param {HTMLElement} heartSymbol : i
+   */
+  like(likeMedia, heartSymbol) {
+    if (likeMedia.classList.contains('liked')) {
+      this.likes--
+      const likeContainer = document.querySelector('.detailsPhotographer .like')
+      const totalLikes = parseInt(likeContainer.textContent)
+      likeContainer.textContent = totalLikes - 1
+    } else {
+      this.likes++
+      const likeContainer = document.querySelector('.detailsPhotographer .like')
+      const totalLikes = parseInt(likeContainer.textContent)
+      likeContainer.textContent = totalLikes + 1
+    }
+    likeMedia.innerHTML = this.likes + ' ' + heartSymbol
+    likeMedia.classList.toggle('liked')
+  }
+
+  /**
+   * Méthode pour faire apparaître le media agrandi
    * @param {HTMLElement} mediaEl : vidéo ciblée
    */
   displayInLightbox(mediaEl) {

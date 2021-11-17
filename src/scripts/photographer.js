@@ -118,12 +118,10 @@ function addMediaToPhotographProfil(photographers, medias) {
       ? mapper(mediaPhotographs)
       : mediaPhotographs
     container.innerHTML = ''
+    let totalLikes = 0
     for (const mediaPhotograph of mappedMediaPhotographs) {
-      const likesMediasPhotographer = document.querySelector('.like')
       const media = factory(mediaPhotograph)
-      const mediasLikes = [media.likes]
-      likesMediasPhotographer.textContent = mediasLikes
-      console.log(mediasLikes)
+      totalLikes += media.likes
       if (media !== undefined) {
         media
           .displayInlist(container)
@@ -132,6 +130,8 @@ function addMediaToPhotographProfil(photographers, medias) {
           )
       }
     }
+    const likesMediasPhotographs = document.querySelector('.like')
+    likesMediasPhotographs.textContent = totalLikes
   }
   createMedias()
 
