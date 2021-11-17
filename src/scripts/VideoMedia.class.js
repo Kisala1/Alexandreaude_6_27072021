@@ -12,6 +12,11 @@ export default class VideoMedia {
     this.price = media.price
   }
 
+  /**
+   * Fonction pour créer une figure avec tous les détails pour une vidéo
+   * @param {HTMLElement} container : div class container_img
+   * @returns
+   */
   displayInlist(container) {
     const figure = document.createElement('figure')
     const video = document.createElement('video')
@@ -26,23 +31,41 @@ export default class VideoMedia {
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')
-    titleImage.className = 'title_image' /* A ENLEVER SI NON UTILISE */
     titleImage.textContent = this.title
 
-    const likeImage = document.createElement('span')
-    likeImage.className = 'like_image'
-    likeImage.textContent = this.likes + ' '
+    const likeMedia = document.createElement('span')
+    likeMedia.setAttribute('tabindex', '0')
+    likeMedia.setAttribute('role', 'button')
+    likeMedia.setAttribute('aria-label', "Ajouter un j'aime à l'image")
+    const heartSymbol =
+      '<i class="fas fa-heart" tabindex="0" role="button" aria-label="Ajouter un j\'aime à l\'image"></i>'
+    let likes = this.likes
+    likeMedia.className = 'like_media'
+    likeMedia.innerHTML = likes + ' ' + heartSymbol
+
+    likeMedia.addEventListener('click', () => {
+      likeMedia.innerHTML = likes++ + ' ' + heartSymbol
+    })
+    likeMedia.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        likeMedia.innerHTML = likes++ + ' ' + heartSymbol
+      }
+    })
 
     container.appendChild(figure)
     figure.appendChild(video)
     video.appendChild(source)
     figure.appendChild(figcaption)
     figcaption.appendChild(titleImage)
-    figcaption.appendChild(likeImage)
+    figcaption.appendChild(likeMedia)
 
     return video
   }
 
+  /**
+   * Fonction pour faire apparaître le media agrandi
+   * @param {HTMLElement} mediaEl : vidéo ciblée
+   */
   displayInLightbox(mediaEl) {
     const idMedia = parseInt(mediaEl.dataset.mediaId)
 

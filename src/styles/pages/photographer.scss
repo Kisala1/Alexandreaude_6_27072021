@@ -56,15 +56,15 @@
     font-size: 1em;
     font-weight: 700;
   }
-
-  img {
-    justify-self: right;
+  .container_img-portrait {
     align-self: center;
-    overflow: hidden;
-    height: 22em;
-    object-fit: cover;
-    clip-path: circle(25%);
-    box-shadow: 10px 5px 5px #000;
+    justify-self: right;
+    width: 55%;
+    .portrait {
+      clip-path: circle(25%);
+      box-shadow: 10px 5px 5px #000;
+      width: 100%;
+    }
   }
 }
 .detailsPhotographer {
@@ -118,8 +118,8 @@
     padding: 0 5px;
     color: theme.$secondary-color;
     font-size: large;
-    .like_image::after {
-      @include mixins.heart;
+    .like_image {
+      cursor: pointer;
     }
   }
 }

@@ -118,6 +118,11 @@
           position: absolute;
           top: 37%;
         }
+        .arrow-left {
+          position: absolute;
+          top: 37%;
+          left: 8%;
+        }
 
         .img-modal {
           box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
@@ -127,7 +132,7 @@
         }
       }
       .modal-description {
-        margin: 10px 0 0 50px;
+        margin-top: 10px;
         color: theme.$secondary-color;
         font-size: 1.3em;
       }

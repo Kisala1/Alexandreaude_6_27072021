@@ -1,3 +1,7 @@
+/**
+ * Retourne url adéquat avec l'id
+ * @returns
+ */
 export function getPhotographerId() {
   // Permet de récupérer l'id du photographe sur son profil
   const queryString = window.location.search
@@ -6,23 +10,30 @@ export function getPhotographerId() {
 }
 
 /**
- * Permet de dérouler le menu au clic sur la flèche
+ * Permet de dérouler le menu au clic sur ul
  *
  */
-
 export function dropDownMenu() {
+  const liVoid = document.querySelector('.li_void')
   const dropDownMenu = document.querySelector('#dropDownMenu')
   dropDownMenu.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      addClassDropDownMenu(dropDownMenu, e)
+      addClassDropDownMenu(dropDownMenu, e, liVoid)
     }
   })
   dropDownMenu.addEventListener('click', (e) => {
-    addClassDropDownMenu(dropDownMenu, e)
+    addClassDropDownMenu(dropDownMenu, e, liVoid)
   })
 }
 
-function addClassDropDownMenu(dropDownMenu, e) {
+/**
+ * Enregistre la function pour ajouter les class pour dérouler / réduire dropDownMenu
+ *
+ * @param {HTMLElement} ul dropDownMenu
+ * @param {Event} e
+ * @param {HTMLElement} li liVoid
+ */
+function addClassDropDownMenu(dropDownMenu, e, liVoid) {
   const arrow = document.querySelector('#arrow_dropDownMenu')
   if (dropDownMenu.className === 'dropDownMenu') {
     dropDownMenu.classList.add('dropDownMenu_active')
@@ -32,7 +43,7 @@ function addClassDropDownMenu(dropDownMenu, e) {
       id="arrow_dropDownMenu"
       class="arrow_dropDownMenu fas fa-chevron-down"
       ></i>`
-
+    liVoid.style.display = 'none'
     const node = e.target.nodeName === 'LI' ? e.target : e.target.parentNode
     dropDownMenu.querySelector('#arrow_dropDownMenu').remove()
     dropDownMenu.insertBefore(node, dropDownMenu.firstChild)
@@ -42,6 +53,11 @@ function addClassDropDownMenu(dropDownMenu, e) {
   }
 }
 
+/**
+ * Enregistre les méthodes de classement les medias en cliquant sur les boutons du dropDownMenu
+ *
+ * @param {*} function createMedias
+ */
 export function registerClassifyMedia({ createMedias }) {
   const titleButton = document.querySelector('.title')
   titleButton.addEventListener('keydown', (e) => {
@@ -83,16 +99,33 @@ export function registerClassifyMedia({ createMedias }) {
     })
   })
 }
-
+/**
+ * Fonction qui trie par ordre alphabétique
+ * @param {*} a media
+ * @param {*} b media
+ * @returns
+ */
 function sortArrayTitle(a, b) {
   return a.title.localeCompare(b.title, 'en', {
     ignorePunctuation: true,
     sensitivity: 'base'
   })
 }
+/**
+ * Fonction qui trie par nombre de likes
+ * @param {*} a media
+ * @param {*} b media
+ * @returns
+ */
 function sortArrayPopularity(a, b) {
   return b.likes - a.likes
 }
+/**
+ * Fonction qui trie par ordre chronologique
+ * @param {*} a media
+ * @param {*} b media
+ * @returns
+ */
 function sortArrayDate(a, b) {
   return b.date.localeCompare(a.date, 'en', { ignorePunctuation: true })
 }

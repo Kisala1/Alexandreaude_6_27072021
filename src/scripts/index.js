@@ -40,11 +40,15 @@ function displayTagsMenu(photographers) {
   // Et de mettre la 1ère lettre du tag en majuscule.
 
   const tagsMenu = document.querySelector('.tagsMenu')
-  for (const tag of tags) {
+  for (const [index, tag] of tags.entries()) {
     const tags = document.createElement('span')
     tags.setAttribute('tabindex', 0)
     tags.setAttribute('role', 'button')
-    tags.setAttribute('aria-label', tag)
+    if (index === 0) {
+      tags.setAttribute('aria-label', 'Trier les photographes par tag ' + tag)
+    } else {
+      tags.setAttribute('aria-label', tag)
+    }
     tags.textContent = '#' + tag[0].toUpperCase() + tag.slice(1)
     tags.className = 'ui_tags'
     tagsMenu.appendChild(tags)
@@ -76,6 +80,12 @@ function addListenersToKeyboardAndTags(photographers) {
     })
   })
 }
+
+/**
+ * Enregistre la fonction qui permet de filtrer les photographes par tag
+ * @param {HTMLElement} target : span tag ciblé
+ * @param {Array} photographers : array des photographes
+ */
 function registerFilterWithTags(target, photographers) {
   // Cible tag au clic et retourne ce même tag
   // sans ' # ' et sans majuscule
@@ -137,7 +147,7 @@ function displayPhotographer(photographer) {
 
   const price = el.querySelector('.price')
   price.textContent = photographer.price + '€/jour'
-  price.setAttribute('aria-label', price.textContent)
+  price.setAttribute('aria-label', photographer.price + '€ par jour')
 
   const tags = el.querySelector('.tagsProfil')
   for (let i = 0; i < photographer.tags.length; i++) {

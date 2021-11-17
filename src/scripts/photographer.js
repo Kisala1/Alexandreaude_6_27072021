@@ -112,7 +112,6 @@ function addMediaToPhotographProfil(photographers, medias) {
   const photographName = document.querySelector('.photograph-name')
   titleModal.textContent = buttonProfil.textContent
   photographName.textContent = photographer.name
-
   const container = document.querySelector('.container_img')
   const createMedias = (mapper) => {
     const mappedMediaPhotographs = mapper
@@ -120,7 +119,11 @@ function addMediaToPhotographProfil(photographers, medias) {
       : mediaPhotographs
     container.innerHTML = ''
     for (const mediaPhotograph of mappedMediaPhotographs) {
+      const likesMediasPhotographer = document.querySelector('.like')
       const media = factory(mediaPhotograph)
+      const mediasLikes = [media.likes]
+      likesMediasPhotographer.textContent = mediasLikes
+      console.log(mediasLikes)
       if (media !== undefined) {
         media
           .displayInlist(container)
@@ -136,6 +139,9 @@ function addMediaToPhotographProfil(photographers, medias) {
   registerModalImg(mediaPhotographs)
 }
 
+/**
+ * Fonction pour fermer lightbox
+ */
 function closeLightbox() {
   const modalImg = document.getElementById('modal_img')
   const closeBtnImg = document.querySelector('.close_modal-img')
@@ -161,6 +167,10 @@ function closeLightbox() {
   })
   closeBtnImg.addEventListener('click', closeModalImg)
 }
+/**
+ * Permet d'afficher le media suivant ou précédent en cliquant sur les flèches
+ * @param {Array} mediaPhotographs : array des medias du photographe
+ */
 
 function registerModalImg(mediaPhotographs) {
   function gotoNextMedia(step) {
@@ -206,7 +216,11 @@ function registerModalImg(mediaPhotographs) {
     }
   })
 }
-
+/**
+ * Permet d'afficher en grand le media ciblé
+ * @param {*} mediaEl : media ciblé
+ * @param {Array} medias : array des medias du photographe
+ */
 function openModalImg(mediaEl, medias) {
   const idMedia = parseInt(mediaEl.dataset.mediaId)
   const media = medias.find((elt) => elt.id === idMedia)

@@ -205,6 +205,10 @@ export function addFormValidation(form, formInputs) {
   })
 }
 
+/**
+ * Fonction pour faire apparaître message à la fin du formulaire
+ */
+
 function messageAppearance() {
   document.querySelector('.title-modal').style.display = 'none'
   document.querySelector('.photograph-name').style.display = 'none'
@@ -214,6 +218,12 @@ function messageAppearance() {
   const containerModalTitle = document.querySelector('.modal-title')
   containerModalTitle.style.justifyContent = 'end'
 }
+
+/**
+ * Permet de retourner la fonction de validation correspondante
+ * @param {Function} name fonction
+ * @returns
+ */
 
 function getValidateFunction(name) {
   switch (name) {

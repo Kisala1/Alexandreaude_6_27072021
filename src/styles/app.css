@@ -32,6 +32,7 @@ body {
   list-style: none;
   overflow: hidden;
   border-radius: 10px;
+  min-width: 125px;
   max-height: 40px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: max-height 0.2s linear;
@@ -41,6 +42,7 @@ body {
   transform: rotate(0deg);
   transition: all 0.2s linear;
   margin-left: 5px;
+  text-align: right;
   cursor: pointer;
 }
 .dropDownMenu li {
@@ -55,9 +57,13 @@ body {
 .dropDownMenu li:hover {
   background-color: #7f1919;
 }
+.dropDownMenu .li_void {
+  height: 41px;
+  justify-content: right;
+}
 
 .dropDownMenu_active {
-  max-height: 123px;
+  max-height: 164px;
   box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
   transition: max-height 0.2s linear;
 }
@@ -275,14 +281,15 @@ input[data-error]::after {
   font-size: 1em;
   font-weight: 700;
 }
-.profil img {
-  justify-self: right;
+.profil .container_img-portrait {
   align-self: center;
-  overflow: hidden;
-  height: 22em;
-  object-fit: cover;
+  justify-self: right;
+  width: 55%;
+}
+.profil .container_img-portrait .portrait {
   clip-path: circle(25%);
   box-shadow: 10px 5px 5px #000;
+  width: 100%;
 }
 
 .detailsPhotographer {
@@ -347,17 +354,8 @@ input[data-error]::after {
   color: #901c1c;
   font-size: large;
 }
-.container_img figcaption .like_image::after {
-  content: "\f004";
-  font-weight: 900;
-  font-family: "Font Awesome 5 Free";
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
+.container_img figcaption .like_image {
+  cursor: pointer;
 }
 
 /**************** Form *********************/
@@ -527,6 +525,11 @@ input[data-error]::after {
   position: absolute;
   top: 37%;
 }
+.modal-mask-img .modal-img .figure-modal .container .arrow-left {
+  position: absolute;
+  top: 37%;
+  left: 8%;
+}
 .modal-mask-img .modal-img .figure-modal .container .img-modal {
   box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -534,7 +537,7 @@ input[data-error]::after {
   height: auto;
 }
 .modal-mask-img .modal-img .figure-modal .modal-description {
-  margin: 10px 0 0 50px;
+  margin-top: 10px;
   color: #901c1c;
   font-size: 1.3em;
 }
