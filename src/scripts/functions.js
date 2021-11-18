@@ -38,6 +38,7 @@ function addClassDropDownMenu(dropDownMenu, e, liVoid) {
   if (dropDownMenu.className === 'dropDownMenu') {
     dropDownMenu.classList.add('dropDownMenu_active')
     arrow.classList.add('arrow_dropDownMenu_active')
+    liVoid.classList.add('li_void_active')
   } else {
     const arrowSymbol = `<i
       id="arrow_dropDownMenu"

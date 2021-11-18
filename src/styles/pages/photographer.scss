@@ -97,7 +97,7 @@
   }
 }
 
-.container_img {
+.container_medias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
@@ -169,7 +169,7 @@
   .container_classify {
     display: none;
   }
-  .container_img {
+  .container_medias {
     grid-template-columns: 1fr;
   }
 }

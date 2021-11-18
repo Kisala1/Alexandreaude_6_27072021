@@ -10,11 +10,12 @@ export default class ImageMedia {
     this.likes = media.likes
     this.date = media.date
     this.price = media.price
+    this.description = media.description
   }
 
   /**
    * Méthode pour créer une figure avec tous les détails pour une image
-   * @param {HTMLElement} container : div class container_img
+   * @param {HTMLElement} container : div class container_medias
    * @returns
    */
   displayInlist(container) {
@@ -88,19 +89,18 @@ export default class ImageMedia {
   displayInLightbox(mediaEl) {
     const idMedia = parseInt(mediaEl.dataset.mediaId)
 
-    const container = document.querySelector('.container-img-modal')
+    const container = document.querySelector('.container-media-modal')
     const mediaModal = document.createElement('img')
-    mediaModal.className = 'img-modal'
+    mediaModal.className = 'media-modal'
     mediaModal.dataset.mediaId = idMedia
     mediaModal.src = mediaEl.src
     mediaModal.alt = mediaEl.alt
-    mediaModal.setAttribute('aria-label', this.title)
+    mediaModal.setAttribute('aria-label', this.description)
     document.querySelector('.modal-description').textContent = mediaEl.alt
     container.innerHTML = ''
     container.appendChild(mediaModal)
-    const modalImg = document.querySelector('.modal-mask-img')
+    const modalImg = document.querySelector('.modal-mask-media')
     modalImg.style.display = 'block'
-    console.log(mediaEl)
 
     trapModal(modalImg)
   }

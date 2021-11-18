@@ -10,11 +10,12 @@ export default class VideoMedia {
     this.likes = media.likes
     this.dates = media.dates
     this.price = media.price
+    this.description = media.description
   }
 
   /**
    * Méthode pour créer une figure avec tous les détails pour une vidéo
-   * @param {HTMLElement} container : div class container_img
+   * @param {HTMLElement} container : div class container_media
    * @returns
    */
   displayInlist(container) {
@@ -89,19 +90,19 @@ export default class VideoMedia {
   displayInLightbox(mediaEl) {
     const idMedia = parseInt(mediaEl.dataset.mediaId)
 
-    const container = document.querySelector('.container-img-modal')
+    const container = document.querySelector('.container-media-modal')
     const mediaModal = document.createElement('video')
     const mediaSourceModal = document.createElement('source')
-    mediaModal.className = 'img-modal'
+    mediaModal.className = 'media-modal'
     mediaModal.dataset.mediaId = idMedia
     mediaSourceModal.src = mediaEl.querySelector('source').src
     mediaModal.controls = mediaEl.controls
-    mediaModal.setAttribute('aria-label', this.title)
-    document.querySelector('.modal-description').textContent = mediaEl.title
+    mediaModal.setAttribute('aria-label', this.description)
+    document.querySelector('.modal-description').textContent = this.title
     container.innerHTML = ''
     container.appendChild(mediaModal)
     mediaModal.appendChild(mediaSourceModal)
-    const modalImg = document.querySelector('.modal-mask-img')
+    const modalImg = document.querySelector('.modal-mask-media')
     modalImg.style.display = 'block'
 
     trapModal(modalImg)

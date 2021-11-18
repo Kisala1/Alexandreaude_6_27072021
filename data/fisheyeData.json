@@ -70,7 +70,8 @@
         "tags": ["fashion"],
         "likes": 62,
         "date": "2011-12-08",
-        "price": 55
+        "price": 55,
+        "description": "Femme sur la plage habillée en jaune"
       },
       {
         "id": 8520927,
@@ -80,7 +81,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2011-11-06",
-        "price": 55
+        "price": 55,
+        "description": "Femme dans un milieu urbain, habillée avec des imprimés style jungle"
       },
       {
         "id": 9025895,
@@ -90,7 +92,8 @@
         "tags": ["fashion"],
         "likes": 72,
         "date": "2013-08-12",
-        "price": 55
+        "price": 55,
+        "description" : "Femme devant un mur avec des motifs géométrique, habillée avec des motifs"
       },
       {
         "id": 9275938,
@@ -100,7 +103,8 @@
         "tags": ["events"],
         "likes": 69,
         "date": "2018-02-22",
-        "price": 55
+        "price": 55,
+        "description": "Décor pour mariage devant un kiosque"
       },
       {
         "id": 2053494,
@@ -433,7 +437,8 @@
         "tags": ["animals"],
         "likes": 142,
         "date": "2019-08-23",
-        "price": 60
+        "price": 60,
+        "description": "Troupeau de chevaux dans les montagnes"
       },
       {
         "id": 95234343,
@@ -443,7 +448,8 @@
         "tags": ["animals"],
         "likes": 59,
         "date": "2019-07-02",
-        "price": 60
+        "price": 60,
+        "description": "Oiseau couleur arc-en-ciel"
       },
   
       {
@@ -454,7 +460,8 @@
         "tags": ["travel"],
         "likes": 25,
         "date": "2019-04-03",
-        "price": 60
+        "price": 60,
+        "description": "Tour japonaise à Kyoto"
       },
       {
         "id": 2523434,
@@ -464,7 +471,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-05-06",
-        "price": 60
+        "price": 60,
+        "description": "Maisons le long du canal, Venise"
       },
       {
         "id": 95293534,
@@ -474,7 +482,8 @@
         "tags": ["travel"],
         "likes": 33,
         "date": "2019-05-12",
-        "price": 60
+        "price": 60,
+        "description": "Montagne et grand lac turquoise"
       },
       {
         "id": 356234343,
@@ -484,7 +493,8 @@
         "tags": ["travel"],
         "likes": 53,
         "date": "2019-06-20",
-        "price": 60
+        "price": 60,
+        "description": "Vélo et escaliers, Paris"
       },
       {
         "id": 235234343,
@@ -494,7 +504,8 @@
         "tags": ["travel"],
         "likes": 63,
         "date": "2019-06-26",
-        "price": 60
+        "price": 60,
+        "description": "Intérieur d'un bâtiment avec des motifs indiens"
       },
       {
         "id": 6234234343,
@@ -504,7 +515,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2019-06-30",
-        "price": 60
+        "price": 60,
+        "description": "Grand bâtiment de Saint Petersburg"
       },
       {
         "id": 6525666253,
@@ -514,7 +526,8 @@
         "tags": ["architecture"],
         "likes": 63,
         "date": "2019-07-20",
-        "price": 60
+        "price": 60,
+        "description": "Ville sur une colline au Tibet"
       },
       {
         "id": 98252523433,
@@ -524,7 +537,8 @@
         "tags": ["architecture"],
         "likes": 88,
         "date": "2020-01-05",
-        "price": 60
+        "price": 60,
+        "description": "La tour de Pise"
       },
       {
         "id": 9259398453,
@@ -534,7 +548,8 @@
         "tags": ["architecture"],
         "likes": 57,
         "date": "2020-01-20",
-        "price": 65
+        "price": 65,
+        "description": "Autoroute en forme de cercle à Buenos Aires"
       },
       {
         "id": 3523523534,
@@ -544,7 +559,8 @@
         "tags": ["architecture"],
         "likes": 54,
         "date": "2020-05-05",
-        "price": 60
+        "price": 60,
+        "description": "Immeuble en forme d'angle avec un ciel bleu"
       },
   
       {
@@ -555,7 +571,8 @@
         "tags": ["sport"],
         "likes": 150,
         "date": "2018-02-30",
-        "price": 70
+        "price": 70,
+        "description": "Femme qui tourne dans les airs, accrochée à une corde dans un gymnase"
       },
       {
         "id": 235234343,
@@ -565,7 +582,8 @@
         "tags": ["sport"],
         "likes": 101,
         "date": "2018-03-05",
-        "price": 65
+        "price": 65,
+        "description": "Femme qui escalade une falaise"
       },
       {
         "id": 235343222,
@@ -575,7 +593,8 @@
         "tags": ["sport"],
         "likes": 103,
         "date": "2018-03-10",
-        "price": 70
+        "price": 70,
+        "description": "Surfeur dans un tube"
       },
       {
         "id": 7775342343,
@@ -585,7 +604,8 @@
         "tags": ["sport"],
         "likes": 77,
         "date": "2018-04-16",
-        "price": 50
+        "price": 50,
+        "description": "Skieur en plein saut"
       },
       {
         "id": 9253445784,
@@ -595,7 +615,8 @@
         "tags": ["sport"],
         "likes": 88,
         "date": "2018-04-22",
-        "price": 65
+        "price": 65,
+        "description": "Groupes de femmes qui font la course sur un stade"
       },
       {
         "id": 22299394,
@@ -605,7 +626,8 @@
         "tags": ["sport"],
         "likes": 95,
         "date": "2018-04-27",
-        "price": 70
+        "price": 70,
+        "description": "Homme faisant du skateboard en plein saut"
       },
       {
         "id": 3452342633,
@@ -615,7 +637,8 @@
         "tags": ["architecture"],
         "likes": 52,
         "date": "2018-05-03",
-        "price": 75
+        "price": 75,
+        "description": "Intérieur d'un bâtiment à plusieurs étages, entièrement blanc"
       },
       {
         "id": 939234243,
@@ -625,7 +648,8 @@
         "tags": ["architecture"],
         "likes": 55,
         "date": "2018-05-10",
-        "price": 72
+        "price": 72,
+        "description": "Batîment moderne en forme de vague, collé à une source d'eau"
       },
       {
         "id": 222959233,
@@ -635,7 +659,8 @@
         "tags": ["architecture"],
         "likes": 85,
         "date": "2018-05-15",
-        "price": 71
+        "price": 71,
+        "description": "Photo monochrome d'un batîment prise dans un certain angle, qui fait penser à un fer à cheval"
       },
       {
         "id": 965933434,
@@ -645,7 +670,8 @@
         "tags": ["architecture"],
         "likes": 66,
         "date": "2018-05-20",
-        "price": 58
+        "price": 58,
+        "description": "Photo d'une séparation de deux batîments de couleurs dorés"
       },
       {
         "id": 777723343,
@@ -655,7 +681,8 @@
         "tags": ["architecture"],
         "likes": 79,
         "date": "2018-05-21",
-        "price": 80
+        "price": 80,
+        "description": "Deux batîments modernes avec des courbes, reliés entre eux"
       }
     ]
   }

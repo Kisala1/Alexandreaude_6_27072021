@@ -112,7 +112,7 @@ function addMediaToPhotographProfil(photographers, medias) {
   const photographName = document.querySelector('.photograph-name')
   titleModal.textContent = buttonProfil.textContent
   photographName.textContent = photographer.name
-  const container = document.querySelector('.container_img')
+  const container = document.querySelector('.container_medias')
   const createMedias = (mapper) => {
     const mappedMediaPhotographs = mapper
       ? mapper(mediaPhotographs)
@@ -143,8 +143,8 @@ function addMediaToPhotographProfil(photographers, medias) {
  * Fonction pour fermer lightbox
  */
 function closeLightbox() {
-  const modalImg = document.getElementById('modal_img')
-  const closeBtnImg = document.querySelector('.close_modal-img')
+  const modalImg = document.getElementById('modal_media')
+  const closeBtnImg = document.querySelector('.close_modal-media')
 
   const closeModalImg = () => {
     modalImg.style.display = 'none'
@@ -174,7 +174,7 @@ function closeLightbox() {
 
 function registerModalImg(mediaPhotographs) {
   function gotoNextMedia(step) {
-    const mediaModal = document.querySelector('.img-modal')
+    const mediaModal = document.querySelector('.media-modal')
     const mediaId = parseInt(mediaModal.dataset.mediaId)
     const mediaIndex = mediaPhotographs.indexOf(
       mediaPhotographs.find((e) => e.id === mediaId)
