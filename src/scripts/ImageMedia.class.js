@@ -29,7 +29,7 @@ export default class ImageMedia {
     img.dataset.date = this.date
     img.setAttribute('tabindex', 0)
     img.setAttribute('role', 'button')
-    img.setAttribute('aria-label', this.title)
+    img.setAttribute('aria-label', this.description)
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')

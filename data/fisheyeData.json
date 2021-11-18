@@ -71,7 +71,7 @@
         "likes": 62,
         "date": "2011-12-08",
         "price": 55,
-        "description": "Femme sur la plage habillée en jaune"
+        "description": "Photo femme sur la plage habillée en jaune"
       },
       {
         "id": 8520927,
@@ -82,7 +82,7 @@
         "likes": 11,
         "date": "2011-11-06",
         "price": 55,
-        "description": "Femme dans un milieu urbain, habillée avec des imprimés style jungle"
+        "description": "Photo femme dans un milieu urbain, habillée avec des imprimés style jungle"
       },
       {
         "id": 9025895,
@@ -93,7 +93,7 @@
         "likes": 72,
         "date": "2013-08-12",
         "price": 55,
-        "description" : "Femme devant un mur avec des motifs géométrique, habillée avec des motifs"
+        "description" : "Photo femme devant un mur avec des motifs géométrique, habillée avec des motifs"
       },
       {
         "id": 9275938,
@@ -104,7 +104,7 @@
         "likes": 69,
         "date": "2018-02-22",
         "price": 55,
-        "description": "Décor pour mariage devant un kiosque"
+        "description": "Photo décor pour mariage devant un kiosque"
       },
       {
         "id": 2053494,
@@ -114,7 +114,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2020-05-25",
-        "price": 55
+        "price": 55,
+        "description": "Photo jeunes mariés marchant vers une nuée d'étincelles"
       },
       {
         "id": 7324238,
@@ -124,7 +125,8 @@
         "tags": ["events"],
         "likes": 33,
         "date": "2019-06-12",
-        "price": 55
+        "price": 55, 
+        "description": "Photo décoration pour fêter les 18 ans, dans une salle au plafond doré"
       },
       {
         "id": 8328953,
@@ -134,7 +136,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2011-12-08",
-        "price": 100
+        "price": 100,
+        "description": "Vidéo d'une structure faite de bois en forme de cheval"
       },
       {
         "id": 7502053,
@@ -144,7 +147,8 @@
         "tags": ["art"],
         "likes": 88,
         "date": "2007-05-07",
-        "price": 55
+        "price": 55,
+        "description": "Photo d'un mur, avec un triangle et un homme qui sont peint"
       },
       {
         "id": 8523492,
@@ -154,7 +158,8 @@
         "tags": ["art"],
         "likes": 24,
         "date": "2018-05-05",
-        "price": 55
+        "price": 55,
+        "description": "Photo d'un tunnel tagé éclairé d'une couleur violette"
       },
       {
         "id": 75902334,
@@ -164,7 +169,8 @@
         "tags": ["art"],
         "likes": 75,
         "date": "2019-11-25",
-        "price": 55
+        "price": 55,
+        "description": "Photo d'un mur peint dee plusieurs pigeons aux couleurs bleus et rouges"
       },
   
       {
@@ -175,7 +181,8 @@
         "tags": ["sport"],
         "likes": 52,
         "date": "2013-02-30",
-        "price": 70
+        "price": 70,
+        "description": "Photo de trois hommes en train de ramer en cadence"
       },
       {
         "id": 92758372,
@@ -185,7 +192,8 @@
         "tags": ["fashion"],
         "likes": 58,
         "date": "2018-07-17",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'un homme et d'une femme prenant la pose, en formant les ailes de la mode"
       },
       {
         "id": 32958383,
@@ -195,7 +203,8 @@
         "tags": ["fashion"],
         "likes": 11,
         "date": "2019-08-12",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'une femme vêtue d'une robe longue rouge dans les rues"
       },
       {
         "id": 928587383,
@@ -205,7 +214,8 @@
         "tags": ["events"],
         "likes": 2,
         "date": "2019-01-02",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'un groupe de personnes assistants une conférence"
       },
       {
         "id": 725639493,
@@ -215,7 +225,8 @@
         "tags": ["events"],
         "likes": 3,
         "date": "2019-05-20",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'un groupe d'hommes en train de suivre une présentation"
       },
       {
         "id": 23394384,
@@ -225,7 +236,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-07-18",
-        "price": 70
+        "price": 70,
+        "description": "Photo monochrome, d'une femme en train de jouer du synthé dans un festival"
       },
       {
         "id": 87367293,
@@ -235,7 +247,8 @@
         "tags": ["events"],
         "likes": 23,
         "date": "2018-02-22",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'une chanteuse lors d'un festival"
       },
       {
         "id": 593834784,
@@ -245,7 +258,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2017-03-13",
-        "price": 70
+        "price": 70,
+        "description": "Photo d'un cerf"
       },
       {
         "id": 83958935,
@@ -255,7 +269,8 @@
         "tags": ["animals"],
         "likes": 52,
         "date": "2016-06-12",
-        "price": 70
+        "price": 70,
+        "description": "Vidéo d'un chiot en train de jouer dans le sable sur la plage, avec un couché de soleil"
       },
   
       {
@@ -266,7 +281,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "description": "Vidéo d'une montagne rocheuse"
       },
       {
         "id": 343423425,
@@ -276,7 +292,8 @@
         "tags": ["travel"],
         "likes": 101,
         "date": "2017-04-03",
-        "price": 45
+        "price": 45,
+        "description": "Photo de personnes en train de prendre un bain en extérieur, avec de la vapeur d'eau qui s'élève vers le ciel"
       },
       {
         "id": 73434243,
@@ -286,7 +303,8 @@
         "tags": ["travel"],
         "likes": 99,
         "date": "2018-04-30",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une route en direction vers une colline"
       },
       {
         "id": 23425523,
@@ -296,7 +314,8 @@
         "tags": ["travel"],
         "likes": 34,
         "date": "2016-04-05",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'un pont dans une forêt"
       },
       {
         "id": 23134513,
@@ -306,7 +325,8 @@
         "tags": ["travel"],
         "likes": 23,
         "date": "2017-03-18",
-        "price": 45
+        "price": 45,
+        "description": "Photo dans une barque voguant sur une rivière avec des montagnes et des forêts autour"
       },
       {
         "id": 92352352,
@@ -316,7 +336,8 @@
         "tags": ["portrait"],
         "likes": 66,
         "date": "2018-05-24",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une femme rousse souriante"
       },
       {
         "id": 34513453,
@@ -326,7 +347,8 @@
         "tags": ["portait"],
         "likes": 52,
         "date": "2017-04-21",
-        "price": 45
+        "price": 45,
+        "description": "Photo monochrome de Shaw"
       },
       {
         "id": 23523533,
@@ -336,7 +358,8 @@
         "tags": ["portait"],
         "likes": 95,
         "date": "2018-11-02",
-        "price": 45
+        "price": 45,
+        "description": "Photo monochrome d'Alexandra"
       },
       {
         "id": 525834234,
@@ -346,7 +369,8 @@
         "tags": ["portait"],
         "likes": 25,
         "date": "2019-01-02",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'un homme âgé faisant une pause"
       },
   
       {
@@ -357,7 +381,8 @@
         "tags": ["travel"],
         "likes": 88,
         "date": "2019-02-03",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une personne solitaire au sommet d'une falaise"
       },
       {
         "id": 625025343,
@@ -367,7 +392,8 @@
         "tags": ["travel"],
         "likes": 85,
         "date": "2019-04-03",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une ville avec des maisons colorées sur une colline"
       },
       {
         "id": 2525345343,
@@ -377,7 +403,8 @@
         "tags": ["portait"],
         "likes": 34,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "description": "Photo monochrome d'un enfant"
       },
       {
         "id": 2523434634,
@@ -387,7 +414,8 @@
         "tags": ["portait"],
         "likes": 63,
         "date": "2019-04-07",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une femme assise"
       },
       {
         "id": 398847109,
@@ -397,7 +425,8 @@
         "tags": ["portait"],
         "likes": 55,
         "date": "2019-06-20",
-        "price": 45
+        "price": 45,
+        "description": "Photo monochrome d'une femme"
       },
       {
         "id": 2534342,
@@ -407,7 +436,8 @@
         "tags": ["events"],
         "likes": 25,
         "date": "2019-06-21",
-        "price": 45
+        "price": 45,
+        "description": "Photo d'une table décorée pour un mariage sur la plage"
       },
       {
         "id": 65235234,
@@ -417,7 +447,8 @@
         "tags": ["events"],
         "likes": 52,
         "date": "2019-06-25",
-        "price": 45
+        "price": 45,
+        "description": "Photo de mariés entre des rochers"
       },
       {
         "id": 23523434,
@@ -427,7 +458,8 @@
         "tags": ["events"],
         "likes": 77,
         "date": "2019-06-28",
-        "price": 45
+        "price": 45,
+        "description": "Photo de mariés dans un jardin prêt à s'embrassser"
       },
       {
         "id": 5234343,

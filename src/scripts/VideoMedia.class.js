@@ -28,7 +28,7 @@ export default class VideoMedia {
     video.id = 'media-' + this.id
     video.dataset.mediaId = this.id
     video.dataset.date = this.date
-    video.setAttribute('aria-label', this.title)
+    video.setAttribute('aria-label', this.description)
     const figcaption = document.createElement('figcaption')
 
     const titleImage = document.createElement('span')
