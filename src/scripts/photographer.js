@@ -107,11 +107,6 @@ function addMediaToPhotographProfil(photographers, medias) {
     (elt) => elt.photographerId === idPhotograph
   )
 
-  const buttonProfil = document.querySelector('.buttonProfil')
-  const titleModal = document.querySelector('.title-modal')
-  const photographName = document.querySelector('.photograph-name')
-  titleModal.textContent = buttonProfil.textContent
-  photographName.textContent = photographer.name
   const container = document.querySelector('.container_medias')
   const createMedias = (mapper) => {
     const mappedMediaPhotographs = mapper
@@ -137,6 +132,13 @@ function addMediaToPhotographProfil(photographers, medias) {
 
   registerClassifyMedia({ createMedias })
   registerModalImg(mediaPhotographs)
+
+  /* Permet d'afficher le titre de la modal formulaire */
+  const buttonProfil = document.querySelector('.buttonProfil')
+  const titleModal = document.querySelector('.title-modal')
+  const photographName = document.querySelector('.photograph-name')
+  titleModal.textContent = buttonProfil.textContent
+  photographName.textContent = photographer.name
 }
 
 /**

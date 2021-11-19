@@ -1,3 +1,5 @@
+import { trapModal } from './form.js'
+
 /**
  * Retourne url adéquat avec l'id
  * @returns
@@ -34,11 +36,18 @@ export function dropDownMenu() {
  * @param {HTMLElement} li liVoid
  */
 function addClassDropDownMenu(dropDownMenu, e, liVoid) {
+  const titleButton = document.querySelector('.title')
+  const popularityButton = document.querySelector('.popularity')
+  const dateButton = document.querySelector('.date')
   const arrow = document.querySelector('#arrow_dropDownMenu')
   if (dropDownMenu.className === 'dropDownMenu') {
     dropDownMenu.classList.add('dropDownMenu_active')
     arrow.classList.add('arrow_dropDownMenu_active')
     liVoid.classList.add('li_void_active')
+    titleButton.setAttribute('tabindex', '0')
+    popularityButton.setAttribute('tabindex', '0')
+    dateButton.setAttribute('tabindex', '0')
+    trapModal(dropDownMenu)
   } else {
     const arrowSymbol = `<i
       id="arrow_dropDownMenu"
@@ -51,6 +60,9 @@ function addClassDropDownMenu(dropDownMenu, e, liVoid) {
     dropDownMenu.firstChild.innerHTML += arrowSymbol
     dropDownMenu.classList.remove('dropDownMenu_active')
     arrow.classList.remove('arrow_dropDownMenu_active')
+    titleButton.removeAttribute('tabindex')
+    popularityButton.removeAttribute('tabindex')
+    dateButton.removeAttribute('tabindex')
   }
 }
 

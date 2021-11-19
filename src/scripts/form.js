@@ -53,7 +53,7 @@ export function trapModal(modalForm) {
   /* Source : https://codepen.io/myogeshchavan97/pen/zYGVbxN?editors=0010 */
 
   const focusableElements =
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), video'
 
   const focusableContent = modalForm.querySelectorAll(focusableElements)
   const firstFocusableElement = modalForm.querySelectorAll(focusableElements)[0]

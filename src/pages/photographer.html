@@ -54,8 +54,8 @@
         <div class="container_classify">
           <span>Trier par </span>
           <nav class="classify_photos">
-            <ul id="dropDownMenu" class="dropDownMenu">
-              <li class="li_void">
+            <ul id="dropDownMenu" class="dropDownMenu" aria-label="Trier par" >
+              <li class="li_void" tabindex="0">
                 <i
                   id="arrow_dropDownMenu"
                   class="arrow_dropDownMenu fas fa-chevron-down"
@@ -63,7 +63,6 @@
               </li>
               <li
                 class="popularity"
-                tabindex="0"
                 role="button"
                 aria-label="Trier par popularité"
               >
@@ -71,7 +70,6 @@
               </li>
               <li
                 class="date"
-                tabindex="0"
                 role="button"
                 aria-label="Trier par date"
               >
@@ -79,7 +77,6 @@
               </li>
               <li
                 class="title"
-                tabindex="0"
                 role="button"
                 aria-label="Trier par titre"
               >
@@ -99,7 +96,6 @@
       id="modal_form"
       class="modal-mask modal_mask"
       aria-hidden="true"
-      aria-describedby="modal inscription"
       role="dialog"
     >
       <div class="modal">
@@ -165,7 +161,6 @@
               type="submit"
               value="Envoyer"
               id="btn_send"
-              aria-label="Envoyer"
             />
           </form>
           <div class="formSuccessMessage">

@@ -131,7 +131,7 @@ function displayPhotographer(photographer) {
 
   const name = el.querySelector('.name')
   name.textContent = photographer.name
-  name.setAttribute('aria-label', name.textContent)
+  name.setAttribute('aria-label', 'Nom du photographe : ' + name.textContent + '.')
 
   imgSelector.alt = photographer.name
   imgSelector.src =
@@ -139,23 +139,33 @@ function displayPhotographer(photographer) {
 
   const lieu = el.querySelector('.lieu')
   lieu.textContent = photographer.city + ', ' + photographer.country
-  lieu.setAttribute('aria-label', lieu.textContent)
+  lieu.setAttribute(
+    'aria-label',
+    'Ville : ' + photographer.city + ', pays : ' + photographer.country + '.'
+  )
 
   const tagline = el.querySelector('.tagline')
   tagline.textContent = photographer.tagline
-  tagline.setAttribute('aria-label', tagline.textContent)
+  tagline.setAttribute('aria-label', 'Slogan' + tagline.textContent + '.')
 
   const price = el.querySelector('.price')
   price.textContent = photographer.price + '€/jour'
-  price.setAttribute('aria-label', photographer.price + '€ par jour')
+  price.setAttribute(
+    'aria-label',
+    'Tarif : ' + photographer.price + '€ par jour' + '.'
+  )
 
   const tags = el.querySelector('.tagsProfil')
-  for (let i = 0; i < photographer.tags.length; i++) {
-    const tag = document.createElement('span')
-    tag.className = 'ui_tags'
-    tag.textContent = '#' + photographer.tags[i]
-    tag.setAttribute('aria-label', photographer.tags[i])
-    tags.appendChild(tag)
+  for (const [index, tag] of photographer.tags.entries()) {
+    const tagEl = document.createElement('span')
+    tagEl.className = 'ui_tags'
+    tagEl.textContent = '#' + tag
+    if (index === 0) {
+      tagEl.setAttribute('aria-label', 'Tags du photographe : ' + tag)
+    } else {
+      tagEl.setAttribute('aria-label', tag)
+    }
+    tags.appendChild(tagEl)
   }
   profilList.appendChild(el)
 }
